@@ -79,7 +79,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-a-post-with-image-galleries",
+            },{id: "post-第k个数",
+      
+        title: "第k个数",
+      
+      description: "使用快排的思想寻找数组中第k大的数",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/Hello-world/";
+        
+      },
+    },{id: "post-a-post-with-image-galleries",
+      
+        title: "a post with image galleries",
+      
+      description: "this is what included image galleries could look like",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/photo-gallery-copy/";
+        
+      },
+    },{id: "post-a-post-with-image-galleries",
       
         title: "a post with image galleries",
       
