@@ -66,3 +66,6 @@ Here's the code for the last row of images above:
 ```
 
 {% endraw %}
+
+
+<!-- <embed src="/assets/pdf/gaomingce_cv.pdf" type="application/pdf" width="100%" height="600px" /> -->
