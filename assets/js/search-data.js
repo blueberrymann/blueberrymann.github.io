@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-第k个数",
+            },{id: "post-双指针问题",
+      
+        title: "双指针问题",
+      
+      description: "使用双指针解决一系列问题",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8F%8C%E6%8C%87%E9%92%88/";
+        
+      },
+    },{id: "post-第k个数",
       
         title: "第k个数",
       
@@ -88,17 +99,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/Hello-world/";
-        
-      },
-    },{id: "post-a-post-with-image-galleries",
-      
-        title: "a post with image galleries",
-      
-      description: "this is what included image galleries could look like",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2024/photo-gallery-copy/";
         
       },
     },{id: "post-a-post-with-image-galleries",
