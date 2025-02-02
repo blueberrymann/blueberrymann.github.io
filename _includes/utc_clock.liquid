@@ -1,0 +1,75 @@
+<div class="utc-clock">
+  <div id="utc-clock-container" class="clock-wrapper">
+    <div class="clock-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </div>
+    <div id="utc-time" class="clock-time"></div>
+  </div>
+</div>
+
+<style>
+  .utc-clock {
+    margin: 2rem auto;
+    max-width: 600px;
+    font-family: var(--global-font-family);
+  }
+
+  .clock-wrapper {
+    background-color: var(--global-bg-color);
+    border: 1px solid var(--global-text-color);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .clock-icon {
+    color: var(--global-text-color);
+  }
+
+  .clock-time {
+    font-size: 1.1rem;
+    color: var(--global-text-color);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  @media (max-width: 576px) {
+    .clock-time {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function updateUTCTime() {
+    const timeElement = document.getElementById('utc-time');
+    const now = new Date();
+    
+    const options = {
+      timeZone: 'UTC',
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+
+    timeElement.textContent = now.toLocaleString('en-GB', options);
+  }
+
+  // 初始更新时间
+  updateUTCTime();
+  
+  // 每秒更新一次时间
+  setInterval(updateUTCTime, 1000);
+</script>

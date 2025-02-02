@@ -1,11 +1,11 @@
 ---
 layout: page
-title: travel
+title: 游记
 permalink: /travel/
 description: 这里是旅行游记~
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [国内, 国外]
 horizontal: false
 ---
 

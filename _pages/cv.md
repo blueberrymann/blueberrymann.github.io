@@ -1,7 +1,7 @@
 ---
 layout: cv
 permalink: /cv/
-title: cv
+title: 简历
 nav: true
 nav_order: 5
 cv_pdf: gaomingce_cv.pdf # you can also use external links here

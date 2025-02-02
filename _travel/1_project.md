@@ -4,7 +4,7 @@ title: 厦门游记
 description: 在厦门玩了5天，不愧是旅行城市，真的让人流连忘返
 img: assets/img/xiamen_beach_with_grace.jpg
 importance: 1
-category: work
+category: 国内
 # related_publications: true
 ---
 
