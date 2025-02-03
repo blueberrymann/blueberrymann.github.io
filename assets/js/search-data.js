@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-20250203力扣每日一题",
+            },{id: "post-双指针问题",
+      
+        title: "双指针问题",
+      
+      description: "使用双指针解决一系列问题",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8F%8C%E6%8C%87%E9%92%88/";
+        
+      },
+    },{id: "post-20250203力扣每日一题",
       
         title: "20250203力扣每日一题",
       
@@ -99,17 +110,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-双指针问题",
-      
-        title: "双指针问题",
-      
-      description: "使用双指针解决一系列问题",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E5%8F%8C%E6%8C%87%E9%92%88/";
         
       },
     },{id: "post-第k个数",
