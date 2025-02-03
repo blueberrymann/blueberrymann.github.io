@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-20250202力扣每日一题",
+            },{id: "post-20250203力扣每日一题",
+      
+        title: "20250203力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-20250202力扣每日一题",
       
         title: "20250202力扣每日一题",
       
