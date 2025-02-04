@@ -79,7 +79,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-双指针问题",
+            },{id: "post-20250204力扣每日一题",
+      
+        title: "20250204力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-位运算",
+      
+        title: "位运算",
+      
+      description: "学习位运算思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E4%BD%8D%E8%BF%90%E7%AE%97/";
+        
+      },
+    },{id: "post-双指针问题",
       
         title: "双指针问题",
       
