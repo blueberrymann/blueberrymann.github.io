@@ -23,8 +23,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
+        },{id: "nav-项目",
+          title: "项目",
           description: "A growing collection of your cool projects.",
           section: "Navigation",
           handler: () => {
@@ -58,28 +58,46 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "dropdown-publications",
-              title: "publications",
+        },{id: "dropdown-发表物",
+              title: "发表物",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "dropdown-projects",
-              title: "projects",
+            },{id: "dropdown-项目",
+              title: "项目",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "dropdown-blog",
-              title: "blog",
+            },{id: "dropdown-博客",
+              title: "博客",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-20250204力扣每日一题",
+            },{id: "dropdown-通往404的神秘轨道",
+              title: "通往404的神秘轨道",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "post-区间和",
+      
+        title: "区间和",
+      
+      description: "学习区间和思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8C%BA%E9%97%B4%E5%92%8C/";
+        
+      },
+    },{id: "post-20250204力扣每日一题",
       
         title: "20250204力扣每日一题",
       
@@ -87,7 +105,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+          window.location.href = "/blog/2025/0204%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
     },{id: "post-位运算",
