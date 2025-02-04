@@ -5,12 +5,14 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: publications
+  - title: 发表物
     permalink: /publications/
   - title: divider
-  - title: projects
+  - title: 项目
     permalink: /projects/
   - title: divider
-  - title: blog
+  - title: 博客
     permalink: /blog/
+  - title: 通往404的神秘轨道
+    permalink: /404.html
 ---
