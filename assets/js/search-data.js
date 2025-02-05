@@ -86,7 +86,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-高精度",
+            },{id: "post-子集-amp-20250205每日一题",
+      
+        title: "子集 &amp; 20250205每日一题",
+      
+      description: "学习区间和思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%AD%90%E9%9B%86/";
+        
+      },
+    },{id: "post-高精度",
       
         title: "高精度",
       
