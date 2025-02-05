@@ -86,7 +86,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-区间和",
+            },{id: "post-高精度",
+      
+        title: "高精度",
+      
+      description: "学习高精度思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E9%AB%98%E7%B2%BE%E5%BA%A6/";
+        
+      },
+    },{id: "post-区间合并",
+      
+        title: "区间合并",
+      
+      description: "学习区间合并思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/";
+        
+      },
+    },{id: "post-区间和",
       
         title: "区间和",
       
