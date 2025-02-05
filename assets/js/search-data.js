@@ -97,6 +97,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E5%AD%90%E9%9B%86/";
         
       },
+    },{id: "post-hot100系列-链表",
+      
+        title: "hot100系列——链表",
+      
+      description: "hot100系列——链表的学习笔记：知识点、思想、代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/hot100-%E9%93%BE%E8%A1%A8/";
+        
+      },
     },{id: "post-高精度",
       
         title: "高精度",

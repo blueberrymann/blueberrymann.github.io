@@ -1,4 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-05T12:23:45+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">子集 &amp;amp; 20250205每日一题</title><link href="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/" rel="alternate" type="text/html" title="子集 &amp;amp; 20250205每日一题"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/"><![CDATA[<h1 id="知识点">知识点</h1> <h2 id="十进制和二进制之间的相互转化">十进制和二进制之间的相互转化</h2> <ul> <li>利用按位与操作符<code class="language-plaintext highlighter-rouge">&amp;</code>可以实现 ```cpp #include &lt;bits/stdc++.h&gt;</li> </ul> <p>using namespace std;</p> <p>int main(void){ vector<int> t; int mask = 8; for(int i = 0; i &lt;= 3; i ++){ if(mask &amp; (1 &lt;&lt; i)){ t.push_back(1); }else{ t.push_back(0); } }</int></p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i = 3; i &gt;= 0; i --){
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-05T16:51:04+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">hot100系列——链表</title><link href="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/" rel="alternate" type="text/html" title="hot100系列——链表"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/"><![CDATA[<h1 id="相交链表">相交链表</h1> <p><img src="/assets/img/screenshot/相交链表.png" alt=""/></p> <h2 id="知识点">知识点</h2> <ul> <li><code class="language-plaintext highlighter-rouge">unordered_set</code>是一个集合，也称为哈希集合 <ul> <li>只存储单个值（与<code class="language-plaintext highlighter-rouge">unordered_map</code>区分）</li> <li>每个元素都是唯一的</li> <li>元素不能修改，只能插入或者删除</li> <li>主要用于快速检查元素是否存在</li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">unorderd_set</code>的<code class="language-plaintext highlighter-rouge">count</code>操作是用来查找集合中元素的个数的，由于<code class="language-plaintext highlighter-rouge">unorderd_set</code>中的元素都是唯一的，所以<code class="language-plaintext highlighter-rouge">count</code>操作的返回值只有<strong>0或1</strong> <h2 id="解题思路">解题思路</h2> </li> <li>首先遍历链表A，并将链表A中的中的每一个节点存入<code class="language-plaintext highlighter-rouge">unordered_set</code>中</li> <li>接下来遍历链表B，使用<code class="language-plaintext highlighter-rouge">count</code>操作判断该节点是否在链表A中也存在 <ul> <li>如果存在，则说明该节点即为相交节点</li> <li>如果不存在，则继续遍历</li> </ul> </li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span> <span class="o">*</span><span class="n">getIntersectionNode</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">headA</span><span class="p">,</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">headB</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">ListNode</span> <span class="o">*&gt;</span> <span class="n">visited</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">headA</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">visited</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">headB</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h1 id="回文链表">回文链表</h1> <p><img src="/assets/img/screenshot/回文链表.png" alt=""/></p> <h2 id="知识点-1">知识点</h2> <ul> <li>需要解决回文字符串的前序知识</li> </ul> <h2 id="解题思路-1">解题思路</h2> <ul> <li>将链表遍历，每个节点的值存入数组中</li> <li>初始化左指针<code class="language-plaintext highlighter-rouge">l = 0</code>，右指针<code class="language-plaintext highlighter-rouge">r = list.size() - 1</code>，分别从数组两端进行遍历，直到<code class="language-plaintext highlighter-rouge">l &gt;= r</code> <ul> <li>如果指针指向的两个字母不相同，那么返回<code class="language-plaintext highlighter-rouge">false</code></li> <li>如果遍历完整结束，则返回<code class="language-plaintext highlighter-rouge">true</code></li> </ul> </li> </ul> <h2 id="实现代码-1">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">isPalindrome</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">temp</span><span class="p">;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">val</span><span class="p">);</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">!=</span> <span class="n">list</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="n">l</span> <span class="o">++</span><span class="p">;</span>
+            <span class="n">r</span> <span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h1 id="环形链表">环形链表</h1> <p><img src="/assets/img/screenshot/环形列表.png" alt=""/></p> <h2 id="知识点-2">知识点</h2> <ul> <li>需要相交链表的前序知识</li> </ul> <h2 id="解题思路-2">解题思路</h2> <ul> <li>初始化一个<code class="language-plaintext highlighter-rouge">unordered_set</code>用于存储已经遍历过的结点</li> <li>每次遍历前首先判断一下这个节点是否已经在<code class="language-plaintext highlighter-rouge">unordered_set</code>中 <ul> <li>如果已经在<code class="language-plaintext highlighter-rouge">unordered_set</code>中，说明链表有重复部分（环），则返回<code class="language-plaintext highlighter-rouge">true</code></li> <li>如果遍历到指针为空，则说明无环，返回<code class="language-plaintext highlighter-rouge">false</code></li> </ul> </li> </ul> <h2 id="实现代码-2">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">hasCycle</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">ListNode</span> <span class="o">*&gt;</span> <span class="n">visited</span><span class="p">;</span>
+
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">temp</span><span class="p">)){</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">visited</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+
+</code></pre></div></div> <h1 id="两数相加">两数相加</h1> <p><img src="/assets/img/screenshot/两数相加.png" alt=""/></p> <h2 id="知识点-3">知识点</h2> <ul> <li>AcWing大数相加模版</li> </ul> <h2 id="解题思路-3">解题思路</h2> <ul> <li>将两个链表转化为数组存储</li> <li>使用大数相加模版 <h2 id="实现代码-3">实现代码</h2> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">add</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">){</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">c</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="n">c</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="n">c</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
+            <span class="n">c</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">cur</span> <span class="o">=</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">num</span><span class="o">:</span> <span class="n">c</span><span class="p">){</span>
+            <span class="n">ListNode</span> <span class="o">*</span><span class="n">nxt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+            <span class="n">cur</span> <span class="o">-&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">nxt</span><span class="p">;</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">nxt</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">ans</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ListNode</span><span class="o">*</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">l1</span><span class="p">,</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">l1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">val</span><span class="p">);</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">l2</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">val</span><span class="p">);</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><summary type="html"><![CDATA[hot100系列——链表的学习笔记：知识点、思想、代码]]></summary></entry><entry><title type="html">子集 &amp;amp; 20250205每日一题</title><link href="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/" rel="alternate" type="text/html" title="子集 &amp;amp; 20250205每日一题"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/"><![CDATA[<h1 id="知识点">知识点</h1> <h2 id="十进制和二进制之间的相互转化">十进制和二进制之间的相互转化</h2> <ul> <li>利用按位与操作符<code class="language-plaintext highlighter-rouge">&amp;</code>可以实现 ```cpp #include &lt;bits/stdc++.h&gt;</li> </ul> <p>using namespace std;</p> <p>int main(void){ vector<int> t; int mask = 8; for(int i = 0; i &lt;= 3; i ++){ if(mask &amp; (1 &lt;&lt; i)){ t.push_back(1); }else{ t.push_back(0); } }</int></p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i = 3; i &gt;= 0; i --){
     cout &lt;&lt; t[i];
 }
 
@@ -788,38 +934,4 @@ x &amp; (~x + 1) = 0000 ... 100 ... 0
         <span class="k">return</span> <span class="n">mina</span> <span class="o">*</span> <span class="n">minb</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry><entry><title type="html">第k个数</title><link href="https://blueberrymann.github.io/blog/2025/Hello-world/" rel="alternate" type="text/html" title="第k个数"/><published>2025-01-31T12:00:00+00:00</published><updated>2025-01-31T12:00:00+00:00</updated><id>https://blueberrymann.github.io/blog/2025/Hello-world</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/Hello-world/"><![CDATA[<h1 id="找到第k个数">找到第k个数</h1> <h2 id="一些基本的量">一些基本的量</h2> <ul> <li>$S_l$表示一次分段后左边段中元素的个数</li> <li>$S_r$表示一次分段后右边段中元素的个数 <h2 id="基本原理">基本原理</h2> <ol> <li>当$k \leq S_l$时，只需要递归左边段</li> <li>当$k &gt; S_l$时，只需要递归右边段，寻找第$k - S_l$个数</li> </ol> </li> </ul> <h2 id="小的注意事项">小的注意事项</h2> <ul> <li>在C++中，当局部变量和全局变量重名时，会优先使用局部变量</li> <li>注意哇！在这里面上传blog，代码块需要和上面文本的空一行才可以正常且高亮显示</li> </ul> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">q</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">q</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
-
-	<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">){</span>
-		<span class="k">do</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">);</span>
-		<span class="k">do</span> <span class="n">j</span><span class="o">--</span><span class="p">;</span> <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">);</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-	<span class="p">}</span>
-
-	<span class="kt">int</span> <span class="n">sl</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">sl</span><span class="p">)</span> <span class="k">return</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
-	
-	<span class="k">return</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">sl</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
-	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-	<span class="p">}</span>
-
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">quick_sort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="acwing"/><summary type="html"><![CDATA[使用快排的思想寻找数组中第k大的数]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry></feed>
