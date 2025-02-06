@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-05T16:51:04+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">hot100系列——链表</title><link href="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/" rel="alternate" type="text/html" title="hot100系列——链表"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/"><![CDATA[<h1 id="相交链表">相交链表</h1> <p><img src="/assets/img/screenshot/相交链表.png" alt=""/></p> <h2 id="知识点">知识点</h2> <ul> <li><code class="language-plaintext highlighter-rouge">unordered_set</code>是一个集合，也称为哈希集合 <ul> <li>只存储单个值（与<code class="language-plaintext highlighter-rouge">unordered_map</code>区分）</li> <li>每个元素都是唯一的</li> <li>元素不能修改，只能插入或者删除</li> <li>主要用于快速检查元素是否存在</li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">unorderd_set</code>的<code class="language-plaintext highlighter-rouge">count</code>操作是用来查找集合中元素的个数的，由于<code class="language-plaintext highlighter-rouge">unorderd_set</code>中的元素都是唯一的，所以<code class="language-plaintext highlighter-rouge">count</code>操作的返回值只有<strong>0或1</strong> <h2 id="解题思路">解题思路</h2> </li> <li>首先遍历链表A，并将链表A中的中的每一个节点存入<code class="language-plaintext highlighter-rouge">unordered_set</code>中</li> <li>接下来遍历链表B，使用<code class="language-plaintext highlighter-rouge">count</code>操作判断该节点是否在链表A中也存在 <ul> <li>如果存在，则说明该节点即为相交节点</li> <li>如果不存在，则继续遍历</li> </ul> </li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-06T13:55:36+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">hot100系列——链表</title><link href="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/" rel="alternate" type="text/html" title="hot100系列——链表"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/hot100-%E9%93%BE%E8%A1%A8/"><![CDATA[<h1 id="相交链表">相交链表</h1> <p><img src="/assets/img/screenshot/相交链表.png" alt=""/></p> <h2 id="知识点">知识点</h2> <ul> <li><code class="language-plaintext highlighter-rouge">unordered_set</code>是一个集合，也称为哈希集合 <ul> <li>只存储单个值（与<code class="language-plaintext highlighter-rouge">unordered_map</code>区分）</li> <li>每个元素都是唯一的</li> <li>元素不能修改，只能插入或者删除</li> <li>主要用于快速检查元素是否存在</li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">unorderd_set</code>的<code class="language-plaintext highlighter-rouge">count</code>操作是用来查找集合中元素的个数的，由于<code class="language-plaintext highlighter-rouge">unorderd_set</code>中的元素都是唯一的，所以<code class="language-plaintext highlighter-rouge">count</code>操作的返回值只有<strong>0或1</strong> <h2 id="解题思路">解题思路</h2> </li> <li>首先遍历链表A，并将链表A中的中的每一个节点存入<code class="language-plaintext highlighter-rouge">unordered_set</code>中</li> <li>接下来遍历链表B，使用<code class="language-plaintext highlighter-rouge">count</code>操作判断该节点是否在链表A中也存在 <ul> <li>如果存在，则说明该节点即为相交节点</li> <li>如果不存在，则继续遍历</li> </ul> </li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
@@ -81,7 +81,7 @@
 <span class="p">};</span>
 
 
-</code></pre></div></div> <h1 id="两数相加">两数相加</h1> <p><img src="/assets/img/screenshot/两数相加.png" alt=""/></p> <h2 id="知识点-3">知识点</h2> <ul> <li>AcWing大数相加模版</li> </ul> <h2 id="解题思路-3">解题思路</h2> <ul> <li>将两个链表转化为数组存储</li> <li>使用大数相加模版 <h2 id="实现代码-3">实现代码</h2> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+</code></pre></div></div> <h1 id="环形链表ii">环形链表II</h1> <h1 id="合并两个有序链表">合并两个有序链表</h1> <h1 id="两数相加">两数相加</h1> <p><img src="/assets/img/screenshot/两数相加.png" alt=""/></p> <h2 id="知识点-3">知识点</h2> <ul> <li>AcWing大数相加模版</li> </ul> <h2 id="解题思路-3">解题思路</h2> <ul> <li>将两个链表转化为数组存储</li> <li>使用大数相加模版 <h2 id="实现代码-3">实现代码</h2> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
@@ -142,6 +142,41 @@
             <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
         <span class="p">}</span>
 
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h1 id="删除链表的倒数第n个节点">删除链表的倒数第N个节点</h1> <p><img src="/assets/img/screenshot/删除链表的倒数第N个结点.png" alt=""/></p> <h2 id="知识点-4">知识点</h2> <ul> <li>哑结点：</li> </ul> <h2 id="解题思路-4">解题思路</h2> <h2 id="实现代码-4">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+
+    <span class="kt">int</span> <span class="n">getLength</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">head</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="p">){</span>
+            <span class="o">++</span> <span class="n">length</span><span class="p">;</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ListNode</span><span class="o">*</span> <span class="nf">removeNthFromEnd</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">dummy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">head</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">getLength</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">cur</span> <span class="o">=</span> <span class="n">dummy</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">-</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">ans</span> <span class="o">=</span> <span class="n">dummy</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">dummy</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><summary type="html"><![CDATA[hot100系列——链表的学习笔记：知识点、思想、代码]]></summary></entry><entry><title type="html">子集 &amp;amp; 20250205每日一题</title><link href="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/" rel="alternate" type="text/html" title="子集 &amp;amp; 20250205每日一题"/><published>2025-02-05T03:56:07+00:00</published><updated>2025-02-05T03:56:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/%E5%AD%90%E9%9B%86/"><![CDATA[<h1 id="知识点">知识点</h1> <h2 id="十进制和二进制之间的相互转化">十进制和二进制之间的相互转化</h2> <ul> <li>利用按位与操作符<code class="language-plaintext highlighter-rouge">&amp;</code>可以实现 ```cpp #include &lt;bits/stdc++.h&gt;</li> </ul> <p>using namespace std;</p> <p>int main(void){ vector<int> t; int mask = 8; for(int i = 0; i &lt;= 3; i ++){ if(mask &amp; (1 &lt;&lt; i)){ t.push_back(1); }else{ t.push_back(0); } }</int></p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i = 3; i &gt;= 0; i --){
