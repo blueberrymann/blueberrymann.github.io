@@ -35,12 +35,16 @@ You can also put regular text between your rows of images, even citations {% cit
 Say you wanted to write a bit about your project before you posted the rest of the images.
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
-<div class="row justify-content-sm-center">
+<div class="row justify-content-sm-center align-items-start">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/Travel_to_Xiamen/Big_Guanfengqin.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/Travel_to_Xiamen/Big_Guanfengqin.png" title="管风琴全景" class="img-fluid rounded z-depth-1" %}
+        <div class="caption">厦门鼓浪屿协和礼拜堂的宏伟管风琴</div>
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/Travel_to_Xiamen/Guanfengqin_Detail.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-4 mt-3 mt-md-0 d-flex justify-content-center">
+        <div style="max-width: 300px;">
+            {% include figure.liquid path="assets/img/Travel_to_Xiamen/Guanfengqin_Detail.png" title="管风琴细节" class="img-fluid rounded z-depth-1" style="max-width: 100%; height: auto; object-fit: contain;" %}
+            <div class="caption">精美的管风琴装饰细节</div>
+        </div>
     </div>
 </div>
 <div class="caption">
