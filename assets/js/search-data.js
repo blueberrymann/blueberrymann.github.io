@@ -86,7 +86,40 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-20250210力扣每日一题",
+            },{id: "post-hot100系列-哈希",
+      
+        title: "hot100系列——哈希",
+      
+      description: "hot100系列——哈希的学习笔记：知识点、思想、代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/hot100-hash/";
+        
+      },
+    },{id: "post-20250211力扣每日一题",
+      
+        title: "20250211力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0211-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-拓扑排序",
+      
+        title: "拓扑排序",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/";
+        
+      },
+    },{id: "post-20250210力扣每日一题",
       
         title: "20250210力扣每日一题",
       
@@ -94,7 +127,18 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/0210%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+          window.location.href = "/blog/2025/0210-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-20250209力扣每日一题",
+      
+        title: "20250209力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0209-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
     },{id: "post-bfs",
