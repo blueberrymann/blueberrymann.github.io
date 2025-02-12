@@ -71,5 +71,11 @@ Here's the code for the last row of images above:
 
 {% endraw %}
 
+## 
+1. 我说我爸单位有个师傅做馅饼好吃
+2. 石头问那个师傅是不是在棒棰岛（这里就有点费解了，突然跳跃到了棒棰岛）
+3. 我说你咋知道呢？石头说：因为棒棰岛上有好多师傅给国家领导人做饭
+4. 我说你咋知道呢?
+5. 石头说：**我是棒棰岛**
 
 <!-- <embed src="/assets/pdf/gaomingce_cv.pdf" type="application/pdf" width="100%" height="600px" /> -->
