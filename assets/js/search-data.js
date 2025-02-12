@@ -86,7 +86,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-hot100系列-哈希",
+            },{id: "post-20250212力扣每日一题",
+      
+        title: "20250212力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0212-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-hot100系列-哈希",
       
         title: "hot100系列——哈希",
       
