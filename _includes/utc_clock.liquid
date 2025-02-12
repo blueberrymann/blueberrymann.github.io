@@ -1,7 +1,17 @@
 <div class="utc-clock">
   <div id="utc-clock-container" class="clock-wrapper">
     <div class="clock-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <circle cx="12" cy="12" r="10"/>
         <polyline points="12 6 12 12 16 14"/>
       </svg>
@@ -51,7 +61,7 @@
   function updateUTCTime() {
     const timeElement = document.getElementById('utc-time');
     const now = new Date();
-    
+
     const options = {
       timeZone: 'UTC',
       weekday: 'long',
@@ -61,7 +71,7 @@
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: false
+      hour12: false,
     };
 
     timeElement.textContent = now.toLocaleString('en-GB', options);
@@ -69,7 +79,7 @@
 
   // 初始更新时间
   updateUTCTime();
-  
+
   // 每秒更新一次时间
   setInterval(updateUTCTime, 1000);
 </script>

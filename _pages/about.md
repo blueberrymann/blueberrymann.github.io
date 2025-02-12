@@ -28,16 +28,22 @@ latest_posts:
 ---
 
 ---
+
 ### **欢迎来到我的个人网站**
+
 在这里我会展示：
+
 - 学习笔记
 - 旅行回忆
 - 我和石头
 - 很多有趣的内容
 
 希望我的网站可以给您带来帮助和欢乐！
+
 ### **Welcome to my personal website**
+
 Here I'll show:
+
 - My notebooks
 - Journey Experience
 - Me and Grace
