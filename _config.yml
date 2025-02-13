@@ -87,7 +87,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Blueberrymann's Blog # blog_name will be displayed in your blog page
+blog_name: 积跬步，行千里 # blog_name will be displayed in your blog page
 blog_description: |
   Welcome! 
   Here I will display experience, errors, and reflects during my learning.
