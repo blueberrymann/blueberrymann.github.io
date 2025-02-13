@@ -86,7 +86,62 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-20250212力扣每日一题",
+            },{id: "post-20250213力扣每日一题",
+      
+        title: "20250213力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0213-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
+    },{id: "post-拓扑排序",
+      
+        title: "拓扑排序",
+      
+      description: "学习拓扑排序思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/";
+        
+      },
+    },{id: "post-一些有用的终端指令",
+      
+        title: "一些有用的终端指令",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E7%BB%88%E7%AB%AF%E6%8C%87%E4%BB%A4/";
+        
+      },
+    },{id: "post-metrics-of-data-quality-in-llm",
+      
+        title: "Metrics of Data Quality in LLM",
+      
+      description: "目前正在研究LLM中评价数据质量的指标都有什么",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/DataQuality-in-LLM/";
+        
+      },
+    },{id: "post-论文生词",
+      
+        title: "论文生词",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E8%AE%BA%E6%96%87%E7%94%9F%E8%AF%8D/";
+        
+      },
+    },{id: "post-20250212力扣每日一题",
       
         title: "20250212力扣每日一题",
       
@@ -117,17 +172,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/0211-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-拓扑排序",
-      
-        title: "拓扑排序",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/";
         
       },
     },{id: "post-20250210力扣每日一题",
