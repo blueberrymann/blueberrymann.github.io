@@ -86,7 +86,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-20250213力扣每日一题",
+            },{id: "post-二分-hot100-amp-acwing-amp-个人总结",
+      
+        title: "二分（hot100 &amp; acwing &amp; 个人总结）",
+      
+      description: "学习二分查找思想和板子，总结经验，刷题",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/hot100-and-acwing-%E4%BA%8C%E5%88%86/";
+        
+      },
+    },{id: "post-树与图的深度优先遍历",
+      
+        title: "树与图的深度优先遍历",
+      
+      description: "学习树与图的深度优先遍历思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%A0%91%E4%B8%8E%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/";
+        
+      },
+    },{id: "post-20250213力扣每日一题",
       
         title: "20250213力扣每日一题",
       
