@@ -15,3 +15,11 @@ featured: false
             class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        {% include figure.liquid path="assets/img/Typical_RAG_Architecture.png" 
+            title="Typical_RAG_Architecutre" 
+            class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
