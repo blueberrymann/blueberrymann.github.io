@@ -97,6 +97,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/0216-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
+    },{id: "post-20250215力扣每日一题",
+      
+        title: "20250215力扣每日一题",
+      
+      description: "记录每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0215-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
     },{id: "post-二分-hot100-amp-acwing-amp-个人总结",
       
         title: "二分（hot100 &amp; acwing &amp; 个人总结）",
