@@ -197,6 +197,90 @@ public:
 };
 ```
 
+
+## AcWing
+### 730. 机器人跳跃问题
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/screenshot/机器人跳跃问题.png" title="机器人跳跃问题" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+#### 知识点
+- `long long`类型在`printf`函数中的替换符为`%lld`
+
+#### 解题思路
+- 根据题意可知，我们要寻找的是最小的可以让机器人跳跃到最后一个塔顶的`e`
+- 分析后可知，`e`具有单调性，即越大越好，所以我们可以采用二分进行查找
+- 划分范围，此题我们可以用寻找**右侧部分端点**思维进行思考，即寻找最小的符合条件的e，右侧区间均为可以使机器人跳跃到最后塔顶的`e`值，左侧区间内的值均无法保证机器人可以跳跃到最后塔顶
+- 设计`check`函数：
+  - 第一次设计：初次设计时，未考虑`爆int`的情况，导致计算到后续塔位置时，即使符合条件的值也会被筛选掉
+  - 第二次设计：采用`long long`类型进行计算，发现治标不治本，考虑剪枝
+  - 第三次设计：当`e`值大于`h`数组中最大的元素时（遍历时获得），此时一定可以跳跃到最后塔顶，直接返回`true`
+
+#### 实现代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N = 1e5 + 100;
+typedef long long ll;
+int h[N];
+int n, MAXE;
+
+bool check(int e){
+    // cout << "进入check函数" << endl;
+    // cout << "此时e为：" << e << endl;
+    // 检查能否通过
+    
+    // ll sum = e;
+    
+    for(int i = 0; i < n; i ++){
+        if(h[i + 1] > e)
+            e -= (h[i + 1] - e);
+        else
+            e += (e - h[i + 1]);
+        
+        // printf("h[%d]时候的sum是多少:%lld \n", i + 1, sum);
+        if(e < 0)
+            return false;
+        else if(e > MAXE)
+            return true;
+    }
+    
+    return true;
+}
+
+
+int main(){
+    ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+    cin >> n;
+    int l = 0, r = 0;
+    h[0] = 0;
+    
+    for(int i = 1; i <= n; i ++){
+        cin >> h[i];
+        r = max(r, h[i]);
+        
+    }
+    MAXE = r; 
+        
+    while(l < r){
+        int mid = (l + r) / 2;
+        if(check(mid))
+            r = mid;
+        else
+            l = mid + 1;
+    }
+    
+    cout << l << endl;
+    
+    
+    return 0;
+}
+```
+
 # 参考资料链接
 
 - [AcWing: 二分查找-数的范围课程](https://www.acwing.com/video/231/)
