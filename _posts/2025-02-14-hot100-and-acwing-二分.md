@@ -201,7 +201,7 @@ public:
 
 - [AcWing: 二分查找-数的范围课程](https://www.acwing.com/video/231/)
 - [AcWing: 二分查找算法模板By Yxc](https://www.acwing.com/file_system/file/content/whole/index/content/3073/)
-- [CSDN博客：不需要考虑mid + 1, mid - 1的二分查找模版](https://blog.csdn.net/WJPnb1/article/details/126360962?spm=1001.2014.3001.5502)
+- [CSDN博客：不需要考虑mid + 1, mid - 1的二分查找模版](https://blog.csdn.net/WJPnb1/article/details/126360962?fromshare=blogdetail&sharetype=blogdetail&sharerId=126360962&sharerefer=PC&sharesource=blueberryman&sharefrom=from_link)
 - [B站视频：二分查找为什么总是写错？](https://www.bilibili.com/video/BV1d54y1q7k7/?spm_id_from=333.337.search-card.all.click&vd_source=d6c2594da70bed6663d829af474e8518)
 - [AcWing-题解-数的范围（详细分析二分过程）](https://www.acwing.com/solution/content/3338/)
 
