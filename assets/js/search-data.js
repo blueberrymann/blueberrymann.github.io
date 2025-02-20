@@ -229,11 +229,11 @@ ninja.data = [{
           window.location.href = "/blog/2025/DataQuality-in-LLM/";
         
       },
-    },{id: "post-论文生词",
+    },{id: "post-论文生词-amp-学术词典",
       
-        title: "论文生词",
+        title: "论文生词&amp;学术词典",
       
-      description: "记录每日一题的解题思路的求解代码",
+      description: "记录在阅读论文时遇到的生词和陌生概念",
       section: "Posts",
       handler: () => {
         
