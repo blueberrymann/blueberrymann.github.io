@@ -141,6 +141,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/0219-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
+    },{id: "post-动态规划",
+      
+        title: "动态规划",
+      
+      description: "学习动态规划思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/";
+        
+      },
     },{id: "post-20250218力扣每日一题",
       
         title: "20250218力扣每日一题",
@@ -315,17 +326,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/0209-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-动态规划",
-      
-        title: "动态规划",
-      
-      description: "学习动态规划思想和板子",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/";
         
       },
     },{id: "post-bfs",
