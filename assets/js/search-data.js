@@ -86,9 +86,9 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-20250221力扣每日一题",
+            },{id: "post-20250223力扣每日一题",
       
-        title: "20250221力扣每日一题",
+        title: "20250223力扣每日一题",
       
       description: "记录每日一题的解题思路的求解代码",
       section: "Posts",
@@ -97,9 +97,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/0223-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
-    },{id: "post-20250221力扣每日一题",
+    },{id: "post-20250222力扣每日一题",
       
-        title: "20250221力扣每日一题",
+        title: "20250222力扣每日一题",
       
       description: "记录每日一题的解题思路的求解代码",
       section: "Posts",
