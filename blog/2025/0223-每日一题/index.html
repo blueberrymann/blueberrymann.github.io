@@ -7,7 +7,7 @@
     <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">SkiplistNode</span> <span class="o">*&gt;</span> <span class="n">forward</span><span class="p">;</span>
     <span class="n">SkiplistNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">_val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_maxLevel</span> <span class="o">=</span> <span class="n">MAX_LEVEL</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">_val</span><span class="p">),</span> <span class="n">forward</span><span class="p">(</span><span class="n">_maxLevel</span><span class="p">,</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
-        
+
     <span class="p">}</span>
 <span class="p">};</span>
 
@@ -35,7 +35,7 @@
         <span class="cm">/* 检测当前元素的值是否等于 target */</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">curr</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="p">}</span> 
+        <span class="p">}</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
 
