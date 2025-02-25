@@ -97,6 +97,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/0225-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
+    },{id: "post-2025第一周蓝桥杯每日一题",
+      
+        title: "2025第一周蓝桥杯每日一题",
+      
+      description: "记录蓝桥杯每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
+        
+      },
     },{id: "post-20250224力扣每日一题",
       
         title: "20250224力扣每日一题",
@@ -273,9 +284,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/";
         
       },
-    },{id: "post-一些有用的终端指令",
+    },{id: "post-有用的终端指令",
       
-        title: "一些有用的终端指令",
+        title: "有用的终端指令",
       
       description: "记录每日一题的解题思路的求解代码",
       section: "Posts",
