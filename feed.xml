@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-26T13:42:46+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">2025第一周蓝桥杯每日一题</title><link href="https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="alternate" type="text/html" title="2025第一周蓝桥杯每日一题"/><published>2025-02-25T13:36:07+00:00</published><updated>2025-02-25T13:36:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><![CDATA[<h1 id="农夫约翰的奶酪块">农夫约翰的奶酪块</h1> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-480.webp 480w,/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-800.webp 800w,/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="农夫约翰的奶酪块" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="知识点">知识点</h2> <h2 id="解题思路">解题思路</h2> <ul> <li>一个<code class="language-plaintext highlighter-rouge">1 * 1 * N</code>的方块的插入方向有三种： <ul> <li>沿x轴方向</li> <li>沿y轴方向</li> <li>沿z轴方向</li> </ul> </li> <li>所以用三个数组表示某一个面背后的的缺口的数量</li> <li>如果某一个面背后缺口的数量已经达到<code class="language-plaintext highlighter-rouge">n</code>了，那么说明可以增加一种插入方案</li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://blueberrymann.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://blueberrymann.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-28T14:30:14+00:00</updated><id>https://blueberrymann.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">2025第一周蓝桥杯每日一题</title><link href="https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="alternate" type="text/html" title="2025第一周蓝桥杯每日一题"/><published>2025-02-25T13:36:07+00:00</published><updated>2025-02-25T13:36:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><![CDATA[<h1 id="农夫约翰的奶酪块">农夫约翰的奶酪块</h1> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-480.webp 480w,/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-800.webp 800w,/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E7%9A%84%E5%A5%B6%E9%85%AA%E5%9D%97.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="农夫约翰的奶酪块" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="知识点">知识点</h2> <h2 id="解题思路">解题思路</h2> <ul> <li>一个<code class="language-plaintext highlighter-rouge">1 * 1 * N</code>的方块的插入方向有三种： <ul> <li>沿x轴方向</li> <li>沿y轴方向</li> <li>沿z轴方向</li> </ul> </li> <li>所以用三个数组表示某一个面背后的的缺口的数量</li> <li>如果某一个面背后缺口的数量已经达到<code class="language-plaintext highlighter-rouge">n</code>了，那么说明可以增加一种插入方案</li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">const</span> <span class="kt">int</span> <span class="n">N</span><span class="o">=</span> <span class="mi">1100</span><span class="p">;</span>
@@ -141,6 +141,156 @@
  * int param_1 = obj-&gt;allocate(size,mID);
  * int param_2 = obj-&gt;freeMemory(mID);
  */</span>
+
+</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><category term="每日一题"/><category term="模拟"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry><entry><title type="html">20250225力扣每日一题</title><link href="https://blueberrymann.github.io/blog/2025/0227-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="alternate" type="text/html" title="20250225力扣每日一题"/><published>2025-02-25T13:36:07+00:00</published><updated>2025-02-25T13:36:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/0227-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/0227-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><![CDATA[<h2 id="知识点">知识点</h2> <ul> <li><code class="language-plaintext highlighter-rouge">list</code>类型： <ul> <li>双向链表结构：每个节点包含数据和指向前后的指针</li> <li>非连续内存：不同于<code class="language-plaintext highlighter-rouge">vector</code>和<code class="language-plaintext highlighter-rouge">array</code>，<code class="language-plaintext highlighter-rouge">list</code>不提供随机访问</li> <li>插入和删除高效</li> <li>增删改操作</li> </ul> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// 在链表尾部添加元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+
+<span class="c1">// 在链表头部添加元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="c1">// 移除链表尾部元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+
+<span class="c1">// 移除链表头部元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+
+<span class="c1">// 清空整个链表</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="c1">// 在指定位置插入元素</span>
+<span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">myList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="o">++</span><span class="n">it</span><span class="p">;</span>  <span class="c1">// 移动到第二个位置</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>                 <span class="c1">// 在第二个位置插入值100</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>              <span class="c1">// 在第二个位置插入3个值为200的元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>           <span class="c1">// 插入初始化列表 (C++11)</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">anotherList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">anotherList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>  <span class="c1">// 插入另一个容器的区间</span>
+
+<span class="c1">// 移除元素</span>
+<span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">myList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="o">++</span><span class="n">pos</span><span class="p">;</span>  <span class="o">++</span><span class="n">pos</span><span class="p">;</span>  <span class="c1">// 移动到第三个位置</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>                       <span class="c1">// 移除第三个元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">myList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// 移除所有元素</span>
+
+<span class="c1">// 移除特定值的所有元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>                       <span class="c1">// 移除所有值为42的元素</span>
+
+<span class="c1">// 按条件移除元素 (C++11)</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span> <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span> <span class="p">});</span>  <span class="c1">// 移除所有负数</span>
+
+<span class="c1">// 替换元素</span>
+<span class="n">std</span><span class="o">::</span><span class="n">replace</span><span class="p">(</span><span class="n">myList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">myList</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">43</span><span class="p">);</span>  <span class="c1">// 将所有42替换为43</span>
+
+<span class="c1">// C++11中的原位构造</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">emplace_front</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span>          <span class="c1">// 在前端原位构造元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span>           <span class="c1">// 在后端原位构造元素</span>
+<span class="n">myList</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">args</span><span class="p">...);</span>      <span class="c1">// 在指定位置原位构造元素</span>
+
+<span class="c1">// 连接两个链表（移动元素，不复制）</span>
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+<span class="n">list1</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">list1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">list2</span><span class="p">);</span>       <span class="c1">// 现在list1={1,2,3,4,5,6}，list2为空</span>
+
+<span class="c1">// 将单个元素从一个链表移到另一个链表</span>
+<span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="o">++</span><span class="n">it</span><span class="p">;</span>  <span class="c1">// 指向第二个元素</span>
+<span class="n">list2</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">list2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">list1</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span> <span class="c1">// 将list1的第二个元素移动到list2开头</span>
+
+<span class="c1">// 将区间元素从一个链表移到另一个链表</span>
+<span class="k">auto</span> <span class="n">start</span> <span class="o">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>                   <span class="c1">// 移动到第四个元素位置</span>
+<span class="n">list2</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">list2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">list1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span> <span class="c1">// 移动[start,end)范围的元素</span>
+
+</code></pre></div></div> <ul> <li>迭代器的使用方法</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// 声明一个list&lt;char&gt;的迭代器变量</span>
+<span class="n">list</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">cursor</span><span class="p">;</span>
+
+<span class="c1">// 将迭代器初始化为指向list的开始</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">myList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+<span class="c1">// 将迭代器初始化为指向list的结束（实际上是最后一个元素之后的位置）</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">myList</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+
+<span class="c1">// 访问迭代器指向的元素</span>
+<span class="kt">char</span> <span class="n">currentChar</span> <span class="o">=</span> <span class="o">*</span><span class="n">cursor</span><span class="p">;</span>
+
+<span class="c1">// 移动迭代器到下一个元素</span>
+<span class="n">cursor</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// 或 ++cursor;</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">cursor</span><span class="p">);</span>  <span class="c1">// C++11引入的方式</span>
+
+<span class="c1">// 移动迭代器到前一个元素</span>
+<span class="n">cursor</span><span class="o">--</span><span class="p">;</span>  <span class="c1">// 或 --cursor;</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">prev</span><span class="p">(</span><span class="n">cursor</span><span class="p">);</span>  <span class="c1">// C++11引入的方式</span>
+
+<span class="c1">// 检查两个迭代器是否相等（指向同一位置）</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">cursor</span> <span class="o">==</span> <span class="n">myList</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// 已经遍历到列表末尾</span>
+<span class="p">}</span>
+
+</code></pre></div></div> <div class="row mt-3"> <div class="col-sm-12"> <object data="/assets/pdf/your_document.pdf" type="application/pdf" width="100%" height="500px"> <p>It appears you don't have a PDF plugin for this browser. You can <a href="/assets/pdf/List_In_Cpp.pdf">click here to download the PDF file.</a> </p> </object> </div> </div> <h2 id="解题思路">解题思路</h2> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">TextEditor</span> <span class="p">{</span>
+<span class="nl">private:</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">editor</span><span class="p">;</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">cursor</span><span class="p">;</span>
+<span class="nl">public:</span>
+    <span class="n">TextEditor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">editor</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kt">void</span> <span class="nf">addText</span><span class="p">(</span><span class="n">string</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="o">:</span> <span class="n">text</span><span class="p">)</span>
+            <span class="n">editor</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kt">int</span> <span class="nf">deleteText</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(;</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">cursor</span> <span class="o">!=</span> <span class="n">editor</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">k</span> <span class="o">--</span><span class="p">){</span>
+            <span class="n">editor</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">prev</span><span class="p">(</span><span class="n">cursor</span><span class="p">));</span>
+            <span class="n">cnt</span> <span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">cnt</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">string</span> <span class="nf">cursorLeft</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">cursor</span> <span class="o">!=</span> <span class="n">editor</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+            <span class="n">k</span> <span class="o">--</span><span class="p">;</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">prev</span><span class="p">(</span><span class="n">cursor</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">auto</span> <span class="n">head</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">head</span> <span class="o">!=</span> <span class="n">editor</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">prev</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nf">string</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">cursor</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="n">string</span> <span class="nf">cursorRight</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">cursor</span> <span class="o">!=</span> <span class="n">editor</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+            <span class="n">k</span> <span class="o">--</span><span class="p">;</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">cursor</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">auto</span> <span class="n">head</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">head</span> <span class="o">!=</span> <span class="n">editor</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">prev</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nf">string</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">cursor</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * Your TextEditor object will be instantiated and called as such:
+ * TextEditor* obj = new TextEditor();
+ * obj-&gt;addText(text);
+ * int param_2 = obj-&gt;deleteText(k);
+ * string param_3 = obj-&gt;cursorLeft(k);
+ * string param_4 = obj-&gt;cursorRight(k);
+ */</span>
+
 
 </code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><category term="每日一题"/><category term="模拟"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry><entry><title type="html">20250224力扣每日一题</title><link href="https://blueberrymann.github.io/blog/2025/0224-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="alternate" type="text/html" title="20250224力扣每日一题"/><published>2025-02-24T13:36:07+00:00</published><updated>2025-02-24T13:36:07+00:00</updated><id>https://blueberrymann.github.io/blog/2025/0224-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/0224-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><![CDATA[<div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81-480.webp 480w,/assets/img/screenshot/%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81-800.webp 800w,/assets/img/screenshot/%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="设计有序流" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="知识点">知识点</h2> <ul> <li>对于一个元素类型为容器的<code class="language-plaintext highlighter-rouge">vector</code>数组，我们可以使用下标和<code class="language-plaintext highlighter-rouge">empty()</code>的方式来判断数组中的某一个位置是否为空</li> <li><code class="language-plaintext highlighter-rouge">vector</code>的<code class="language-plaintext highlighter-rouge">resize</code>操作 <ul> <li>增大容器：新增元素会被初始化</li> <li>缩小容器：超出新大小的元素会被销毁</li> </ul> </li> </ul> <h2 id="解题思路">解题思路</h2> <ul> <li>在初始化操作中，我们将类的成员变量数组<code class="language-plaintext highlighter-rouge">stream</code>使用<code class="language-plaintext highlighter-rouge">resize()</code>操作将数组扩大到指定大小</li> <li>在<code class="language-plaintext highlighter-rouge">insert</code>操作中，将指定位置上的数组元素插入对应的字符穿</li> <li>在输出阶段，首先判断<code class="language-plaintext highlighter-rouge">ptr</code>有没有越界，如果没有越界，则判断<code class="language-plaintext highlighter-rouge">ptr</code>指向的元素是否为空</li> <li>如果既没有越界也不为空过，那么将对应的字符串输入<code class="language-plaintext highlighter-rouge">ans</code>数组并返回</li> </ul> <h2 id="实现代码">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">class</span> <span class="nc">OrderedStream</span> <span class="p">{</span>
@@ -386,146 +536,4 @@
     <span class="p">}</span>
 <span class="p">};</span>
 
-</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><category term="每日一题"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry><entry><title type="html">动态规划</title><link href="https://blueberrymann.github.io/blog/2025/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="alternate" type="text/html" title="动态规划"/><published>2025-02-18T12:52:45+00:00</published><updated>2025-02-18T12:52:45+00:00</updated><id>https://blueberrymann.github.io/blog/2025/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92</id><content type="html" xml:base="https://blueberrymann.github.io/blog/2025/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"><![CDATA[<h1 id="线性dp">线性DP</h1> <h2 id="最长上升子序列">最长上升子序列</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97-480.webp 480w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97-800.webp 800w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="最长上升子序列" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="解题思路">解题思路</h3> <ul> <li>动态规划： <ul> <li>状态表示：<code class="language-plaintext highlighter-rouge">f[i]</code>表示以第<code class="language-plaintext highlighter-rouge">i</code>个数字为结尾的最大长度 <ul> <li>集合：所以以第<code class="language-plaintext highlighter-rouge">i</code>个数结尾的上升子序列</li> <li>属性：集合里面每一个上升子序列的长度的<strong>最大值</strong></li> </ul> </li> <li>状态计算：将<code class="language-plaintext highlighter-rouge">f[i]</code>集合进行分类，以倒数第二个数的位置进行分类 <ol> <li>序列中只有一个数</li> <li>倒数第二个数是序列的第$1$个数</li> <li>倒数第二个数是序列的第$2$个数</li> <li>……</li> <li>倒数第二个数是序列的第$i-1$个数 <ul> <li>公式：$f(i)=max(f(j) + 1),j=0,1,2,3,…,i-1,a$</li> </ul> </li> </ol> </li> </ul> </li> </ul> <h3 id="实现代码">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1100</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-
-    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
-        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="c1">// 只有a[i]一个数</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="p">}</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div> <h2 id="最长上升子序列ii">最长上升子序列II</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-480.webp 480w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-800.webp 800w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="最长上升子序列II" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="知识点">知识点</h3> <h3 id="解题思路-1">解题思路</h3> <ul> <li>某一元素前，存储所有不同长度的上升子序列的最后一个元素的最小值</li> </ul> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-%E7%A4%BA%E6%84%8F%E5%9B%BE-480.webp 480w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-%E7%A4%BA%E6%84%8F%E5%9B%BE-800.webp 800w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-%E7%A4%BA%E6%84%8F%E5%9B%BE-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97II-%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="最长上升子序列II-示意图" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <ul> <li>如上图所示，所有各种长度的上升子序列的最后元素的最小值排列在一起，应该是严格递增的</li> <li>证明： <ul> <li>假设：长度为6的上升子序列的最后一个元素的最小值为$x$，长度为5的上升子序列的最后一个元素的最小值为$y$，并且$x \leq y$</li> <li>那么，长度为6的上升子序列的倒数第二个元素$z$一定小于$y$</li> <li>但是，$z &lt; y$与事实$y$是长度为5的上升子序列的最后一个元素是最小值相违背</li> <li>所以假设为假，$x &gt; y$为真，整个序列一定是单调递增的</li> </ul> </li> </ul> <h3 id="实现代码-1">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-<span class="c1">// a[N]用来存储数字</span>
-<span class="c1">// q[N]用来存储不同长度的上升子序列的最后一个元素的最小值</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-
-    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">),</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-
-    <span class="c1">// 存入数组</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
-        <span class="c1">// 利用二分法，对q[N]进行更新</span>
-        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">){</span>
-            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
-            <span class="k">else</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="c1">// 当前a[i]插入的位置+1（即最后一个数字为a[i]的上升子序列的长度）</span>
-        <span class="c1">// 和之前算出来的最长上升子序列长度</span>
-        <span class="c1">// 进行比较并更新最长上升子序列长度</span>
-        <span class="n">len</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-
-        <span class="c1">// 将a[i]元素插入到对应位置，即更新某一长度的上升子序列的最后一个元素的最小值</span>
-        <span class="n">q</span><span class="p">[</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="p">}</span>
-
-    <span class="c1">// 输出答案</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">len</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div> <h2 id="最长公共子序列">最长公共子序列</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97-480.webp 480w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97-800.webp 800w,/assets/img/screenshot/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="最长公共子序列" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="知识点-1">知识点</h3> <h3 id="解题思路-2">解题思路</h3> <ul> <li>求A和B所有的公共子序列的长度的最大值</li> <li>动态规划（闫氏DP分析法） <ul> <li>状态表示：<code class="language-plaintext highlighter-rouge">f[i][j]</code> <ul> <li>集合：所有<code class="language-plaintext highlighter-rouge">A[1] ~ A[i]</code>和<code class="language-plaintext highlighter-rouge">B[1] ~ B[j]</code>的公共子序列的集合</li> <li>属性：最大值</li> </ul> </li> <li>状态计算：通过<code class="language-plaintext highlighter-rouge">a[i]</code>和<code class="language-plaintext highlighter-rouge">b[j]</code>字符在不在这个子序列 <ul> <li><code class="language-plaintext highlighter-rouge">00</code>：<code class="language-plaintext highlighter-rouge">a[i]</code>和<code class="language-plaintext highlighter-rouge">b[j]</code>都不包含 <ul> <li>那么公共子序列应该在<code class="language-plaintext highlighter-rouge">A[1] ~ A[i - 1]</code>和<code class="language-plaintext highlighter-rouge">B[1] ~ B[j - 1]</code>中求得</li> <li>对于这种情况，<strong><code class="language-plaintext highlighter-rouge">f[i][j] = f[i - 1][j - 1]</code></strong></li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">01</code>：不包含<code class="language-plaintext highlighter-rouge">a[i]</code>，只包含<code class="language-plaintext highlighter-rouge">b[j]</code> <ul> <li><strong>我们可以发现这种情况比较难表示</strong></li> <li>因为<code class="language-plaintext highlighter-rouge">f[i - 1][j]</code>不一定包含<code class="language-plaintext highlighter-rouge">b[j]</code>，但是在求最大值的过程中，我们重复表示也是无所谓的</li> <li>因为<code class="language-plaintext highlighter-rouge">f[i - 1][j]</code>中不包含<code class="language-plaintext highlighter-rouge">b[j]</code>的情况会被包含在其他情况中，不会影响最大值的计算</li> <li>对于这种情况，<code class="language-plaintext highlighter-rouge">f[i][j] = f[i - 1][j]</code></li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">10</code>：不包含<code class="language-plaintext highlighter-rouge">b[j]</code>，只包含<code class="language-plaintext highlighter-rouge">a[i]</code> <ul> <li><strong>我们可以发现这种情况比较难表示</strong></li> <li>因为<code class="language-plaintext highlighter-rouge">f[i][j - 1]</code>不一定包含<code class="language-plaintext highlighter-rouge">a[i]</code>，但是在求最大值的过程中，我们重复表示也是无所谓的</li> <li>因为<code class="language-plaintext highlighter-rouge">f[i][j - 1]</code>中不包含<code class="language-plaintext highlighter-rouge">a[i]</code>的情况会被包含在其他情况中，不会影响最大值的计算</li> <li>对于这种情况，<code class="language-plaintext highlighter-rouge">f[i][j] = f[i][j - 1]</code></li> </ul> </li> <li><code class="language-plaintext highlighter-rouge">11</code>：<code class="language-plaintext highlighter-rouge">a[i]</code>和<code class="language-plaintext highlighter-rouge">b[j]</code>都包含 <ul> <li>只有<code class="language-plaintext highlighter-rouge">a[i] == b[j]</code>时，才可能出现这种情况</li> <li>此时，我们如果不考虑<code class="language-plaintext highlighter-rouge">a[i]</code>和<code class="language-plaintext highlighter-rouge">b[j]</code>，那么<code class="language-plaintext highlighter-rouge">A[1] ~ A[i - 1]</code>和<code class="language-plaintext highlighter-rouge">B[1] ~ B[j - 1]</code>中的解就是<code class="language-plaintext highlighter-rouge">f[i - 1][j - 1]</code></li> <li>对于这种情况，<strong><code class="language-plaintext highlighter-rouge">f[i][j] = f[i - 1][j - 1] + 1</code></strong></li> </ul> </li> </ul> </li> <li>在这道题中，因为是求最大值，所以重复无所谓，只保证不遗漏就可以</li> <li>综上，<code class="language-plaintext highlighter-rouge">f[i][j] = max(f[i - 1][j], max(f[i][j - 1], f[i - 1][j - 1] + 1))</code></li> </ul> </li> </ul> <h3 id="实现代码-2">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1100</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">){</span>
-            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-                <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="p">}</span>
-
-</code></pre></div></div> <h1 id="区间dp">区间DP</h1> <h2 id="石子合并">石子合并</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-480.webp 480w,/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-800.webp 800w,/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="石子合并" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="知识点-2">知识点</h3> <h3 id="解题思路-3">解题思路</h3> <ul> <li>动态规划</li> <li>闫氏DP分析法 <ul> <li>状态表示：<code class="language-plaintext highlighter-rouge">f[i][j]</code> <ul> <li>集合：所有将$[i, j]$合并为一堆的方案的集合</li> <li>属性：最小值</li> </ul> </li> <li>状态计算：根据分析可知，最后合并的一定是<strong>左面一堆右面一堆</strong>，所以按照划分的地方进行区分 <ul> <li>对于左面一堆：需要合并的最小代价为<code class="language-plaintext highlighter-rouge">f[i, k]</code></li> <li>对于右面一堆：需要合并的最小代价为<code class="language-plaintext highlighter-rouge">f[k + 1, j]</code></li> <li>合并两个大堆所需要的代价是$\sum_{m = i}^ja_m$，可以优化为使用区间和进行表示，即<code class="language-plaintext highlighter-rouge">s[j] - s[i - 1]</code></li> </ul> </li> </ul> </li> <li>状态转移方程为：$f(i,j)=f(i,k)+f(k+1, j)+s[j]-s[i-1]$</li> </ul> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-%E7%A4%BA%E6%84%8F%E5%9B%BE-480.webp 480w,/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-%E7%A4%BA%E6%84%8F%E5%9B%BE-800.webp 800w,/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-%E7%A4%BA%E6%84%8F%E5%9B%BE-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/screenshot/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6-%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="石子合并-示意图" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h3 id="实现代码-3">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">330</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">s</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">len</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">len</span> <span class="o">++</span><span class="p">){</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
-            <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
-            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span> <span class="o">++</span><span class="p">)</span>
-                <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="acwing"/><category term="动态规划"/><summary type="html"><![CDATA[学习动态规划思想和板子]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="learning-notebook"/><category term="code"/><category term="algorithm"/><category term="leetcode"/><category term="每日一题"/><summary type="html"><![CDATA[记录每日一题的解题思路的求解代码]]></summary></entry></feed>
