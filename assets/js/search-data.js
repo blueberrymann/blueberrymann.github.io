@@ -196,6 +196,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/0219-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
+    },{id: "post-数据结构",
+      
+        title: "数据结构",
+      
+      description: "学习数据结构思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/";
+        
+      },
     },{id: "post-动态规划",
       
         title: "动态规划",
