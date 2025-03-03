@@ -204,7 +204,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/";
+          window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
         
       },
     },{id: "post-动态规划",
