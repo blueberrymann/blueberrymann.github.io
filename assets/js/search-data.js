@@ -86,7 +86,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-20250225力扣每日一题",
+            },{id: "post-数据结构",
+      
+        title: "数据结构",
+      
+      description: "学习数据结构思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
+        
+      },
+    },{id: "post-20250225力扣每日一题",
       
         title: "20250225力扣每日一题",
       
@@ -194,17 +205,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/0219-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-数据结构",
-      
-        title: "数据结构",
-      
-      description: "学习数据结构思想和板子",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
         
       },
     },{id: "post-动态规划",
