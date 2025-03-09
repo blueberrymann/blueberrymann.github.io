@@ -86,7 +86,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-数据结构",
+            },{id: "post-数学知识",
+      
+        title: "数学知识",
+      
+      description: "学习数学知识思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/acwing-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/";
+        
+      },
+    },{id: "post-数据结构",
       
         title: "数据结构",
       
