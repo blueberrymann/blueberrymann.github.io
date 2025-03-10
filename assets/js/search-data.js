@@ -108,9 +108,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
         
       },
-    },{id: "post-20250225力扣每日一题",
+    },{id: "post-20250227力扣每日一题",
       
-        title: "20250225力扣每日一题",
+        title: "20250227力扣每日一题",
       
       description: "记录每日一题的解题思路的求解代码",
       section: "Posts",
