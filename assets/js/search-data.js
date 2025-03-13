@@ -989,9 +989,9 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "travel-厦门游记",
-          title: '厦门游记',
-          description: "在厦门玩了5天，不愧是旅行城市，真的让人流连忘返",
+            },},{id: "travel-厦门游记-海风-阳光与美食的完美邂逅",
+          title: '厦门游记 - 海风、阳光与美食的完美邂逅',
+          description: "五天的厦门之旅，被这座海滨城市的魅力深深吸引，不愧是中国最宜居的旅行目的地之一",
           section: "Travel",handler: () => {
               window.location.href = "/travel/1_project/";
             },},{
