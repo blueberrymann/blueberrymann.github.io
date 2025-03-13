@@ -86,7 +86,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-贪心",
+            },{id: "post-搜索与图论",
+      
+        title: "搜索与图论",
+      
+      description: "学习搜索与图论思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/acwing-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/";
+        
+      },
+    },{id: "post-贪心",
       
         title: "贪心",
       
