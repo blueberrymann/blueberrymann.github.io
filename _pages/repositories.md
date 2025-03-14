@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: 仓库
 description: 这是我的仓库，希望未来能有很多星星🌠
 nav: true
 nav_order: 4
