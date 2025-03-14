@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-项目",
-          title: "项目",
-          description: "A growing collection of your cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
         },{id: "nav-游记",
           title: "游记",
           description: "这里是旅行游记~",
@@ -37,8 +30,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/travel/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
+        },{id: "nav-仓库",
+          title: "仓库",
           description: "这是我的仓库，希望未来能有很多星星🌠",
           section: "Navigation",
           handler: () => {
@@ -51,35 +44,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "dropdown-发表物",
-              title: "发表物",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-项目",
-              title: "项目",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-博客",
-              title: "博客",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "dropdown-通往404的神秘轨道",
+        },{id: "dropdown-通往404的神秘轨道",
               title: "通往404的神秘轨道",
               description: "",
               section: "Dropdown",
