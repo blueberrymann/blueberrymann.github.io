@@ -94,7 +94,7 @@
 <span class="p">}</span>
 
 
-</code></pre></div></div> <h1 id="树与图的广度优先遍历">树与图的广度优先遍历</h1> <h2 id="图中点的层次">图中点的层次</h2> <h3 id="实现代码-1">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div> <h1 id="树与图的广度优先遍历">树与图的广度优先遍历</h1> <h2 id="图中点的层次">图中点的层次</h2> <h3 id="知识点-1">知识点</h3> <h3 id="解题思路-1">解题思路</h3> <ul> <li>第一个宽搜到的路径一定是最短的路径，直接返回就可以</li> <li>使用队列存储每一层节点</li> </ul> <h3 id="实现代码-1">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -144,6 +144,69 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
+</code></pre></div></div> <h1 id="dijkstra">Dijkstra</h1> <h2 id="dijkstra求最短路1">Dijkstra求最短路1</h2> <h3 id="算法思想">算法思想</h3> <ol> <li>初始化距离，<code class="language-plaintext highlighter-rouge">dist[1] = 0, dist[i] = inf</code>；初始化集合<code class="language-plaintext highlighter-rouge">s</code>，当前已确定最短距离的点</li> <li> <code class="language-plaintext highlighter-rouge">for i: 0 ~ n</code>i从0~n进行迭代 <ul> <li>找到不在<code class="language-plaintext highlighter-rouge">s</code>中，距离当前结构最近的点<code class="language-plaintext highlighter-rouge">t</code> </li> <li>把这个点<code class="language-plaintext highlighter-rouge">t</code>加到s中</li> <li>用t更新其他点的距离，即从a点到b点的路径中，由于t的加入，产生了新的路径，如果这个新的路径的距离更短，那么就要更新a点和b点之间最短路径的距离，其实就是判断<code class="language-plaintext highlighter-rouge">dist[x] &gt; dist[t] + w</code> </li> </ul> </li> </ol> <ul> <li>稠密图用<strong>邻接矩阵</strong>存储</li> <li>稀疏图用<strong>邻接表</strong>存储</li> </ul> <h3 id="实现代码-2">实现代码</h3> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">510</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">dist</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="c1">// st[i]表示第i个点有没有确定最短路，即这个点是否在集合中</span>
+<span class="kt">bool</span> <span class="n">st</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">dijkstra</span><span class="p">(){</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">dist</span><span class="p">);</span>
+    <span class="n">dist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// 此处t=-1表示当前没在集合中，距离集合最近的点还没找到</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span> <span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">])){</span>
+                <span class="c1">// 此处代表两种情况</span>
+                <span class="c1">// 第一种情况为t = -1表示还没在集合中</span>
+                <span class="c1">// 第二种情况为dist[t] &gt; dist[j]，表示当前的距离还不是最短的，需要更新</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">st</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="c1">// 将找到的最短距离的点加到集合中</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">g</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+            <span class="c1">// 更新最短距离</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="mh">0x3f3f3f3f</span><span class="p">)</span>   <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+
+    <span class="n">memset</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">g</span><span class="p">);</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">m</span> <span class="o">--</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">g</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">();</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/" target="_blank" rel="external nofollow noopener">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</a> <svg width="1rem" height="1rem" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2" target="_blank" rel="external nofollow noopener">Displaying External Posts on Your al-folio Blog</a> <svg width="1rem" height="1rem" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/acwing-%E8%B4%AA%E5%BF%83/">贪心</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/acwing-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">数学知识</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Mingce Gao. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
     addBackToTop();
   </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
