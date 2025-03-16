@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: 发表物
-description: 期待未来会有发表物吧(*❦ω❦)
+description: 向前向前向前——我们的文章向太阳
 nav: true
 nav_order: 2
 ---
