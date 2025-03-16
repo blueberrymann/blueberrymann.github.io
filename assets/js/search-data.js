@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-发表物",
           title: "发表物",
-          description: "期待未来会有发表物吧(*❦ω❦)",
+          description: "向前向前向前——我们的文章向太阳",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
