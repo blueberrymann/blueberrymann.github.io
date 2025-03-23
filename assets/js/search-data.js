@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-项目",
+          title: "项目",
+          description: "A growing collection of your cool projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-游记",
           title: "游记",
           description: "这里是旅行游记~",
@@ -914,9 +921,9 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-资源解耦的联邦学习-一种新型三方博弈激励机制解读",
+          title: '资源解耦的联邦学习：一种新型三方博弈激励机制解读',
+          description: "论文复盘｜Data Assetization via Resources-Decoupled Federated Learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
