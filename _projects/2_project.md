@@ -1,12 +1,57 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
-importance: 2
+title: 资源解耦的联邦学习：一种新型三方博弈激励机制解读
+description: 论文复盘｜Data Assetization via Resources-Decoupled Federated Learning
+img: assets/img/projects/Data_Assetization主图.png
+importance: 1
 category: work
 giscus_comments: true
 ---
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/Data_Assetization主图.png" title="Data Assetaization via Resource-Decoupled FL" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Data Assetaization via Resource-Decoupled FL
+</div>
+
+## 主要创新点
+
+### 提出了“资源解耦联邦学习”框架
+
+- 不同于传统联邦学习假设每个参与者既拥有数据又具备计算能力，本文考虑到了数据资源和计算资源的分离——即**数据拥有者没有算力，计算中心没有数据**。
+- 我们构建了一个由三方组成的新型框架联邦学习：
+  - 模型拥有者 (Model Owner)：负责协调整体FL流程，设定激励策略。
+  - 数据拥有者 (Data Owner)：提供不同质量和数量的数据，但计算能力有限。
+  - 计算中心 (Computing Center)：提供计算资源，与数据拥有者匹配完成训练任务。
+
+### 构建三方博弈模型（Tripartite Stackelberg Model）
+
+- 本文提出了一个**三层Stackelberg 博弈模型**
+  - 模型拥有者为领导者，决定奖励总额
+  - 数据拥有者为第二层领导者，决定贡献数据的数量和质量
+  - 计算中心为跟随者，决定是否参与和匹配数据
+
+### 设计质量感知的动态资源解耦联邦学习算法（QR-RDFL）
+
+- QR-RDFL: Quality-aware dynamic resource-decoupled FL algorithm
+- 初始节点，根据数据拥有者报告的质量进行策略的生成
+- 训练过程中，通过真实训练loss动态调整数据质量评估
+- 使用Gale-Shapley算法对数据拥有者和计算中心进行一对一匹配
+
+## 研究方法
+
+### 问题重述
+
+## 附 (知识点)
+
+### Stackelberg 博弈模型
+
+### Nash 均衡 (Nash Equilibrium)
+
+### Gale-Shapley 算法
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
