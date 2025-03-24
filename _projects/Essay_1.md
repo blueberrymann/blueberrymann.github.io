@@ -5,7 +5,7 @@ description: 论文复盘｜Data Assetization via Resources-Decoupled Federated 
 img: assets/img/projects/Data_Assetization主图.png
 importance: 1
 category: 学术
-giscus_comments: true
+giscus_comments: false
 ---
 
 <div class="row">
@@ -117,10 +117,34 @@ $$
 | $\alpha$ | 全局模型质量对收益的敏感度（正数）    |
 | $g(x)$   | 模型质量的效用函数，通常设为$ln(1+x)$ |
 
+### 三方 Stackelberg 模型(Tripartite Stackelberg Model)
+
 ## 附 (知识点)
 
 ### Stackelberg 博弈模型
 
+- 这种模型的决策是**有顺序**的
+- 是一种非对称博弈模型，场景中有领导者 (leader) 和跟随者 (follower)
+- 领导者先行动，跟随者看到领导者的策略后再选择自己的最优策略
+- 例如：
+  - 企业定价 vs 消费者反应
+  - 政策制定 vs 市场反应
+
 ### Nash 均衡 (Nash Equilibrium)
+
+- 一种策略组合状态，在这个状态下，每个人都无法通过改变自己的状态来增加收益
+- **策略是平衡的，每个人都不想变了**
+- 所有参与者都同时做决策，每个人都试图最大化自己的收益
+- 例如：
+  - 石头剪刀布游戏
+
+### Stackeelberg-Nash 均衡
+
+- 在一个复杂的系统中，我们会遇到：
+  - 一部分人先进行决策 —— **Stackelberg**
+    - 模型拥有者先进行定价
+  - 另一部分人在已知前者的策略下，与自己的同种类的参与者进行竞争 —— **Nash**
+    - 多个数据拥有者之间进行竞争
+- 因此，出现了一个结合的状态 **Stackelberg-Nash均衡（NSE）**
 
 ### Gale-Shapley 算法
