@@ -10,7 +10,6 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Northeastern University</p>
-    <p>Hunnan District, Shenying Ave</p>
     <p>Shenyang, Liaoning</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"

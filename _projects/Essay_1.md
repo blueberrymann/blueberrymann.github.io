@@ -119,6 +119,38 @@ $$
 
 ### 三方 Stackelberg 模型(Tripartite Stackelberg Model)
 
+- 为三方构建了Stackelberg博弈模型，并定义了Stackelberg-Nash均衡来获取全局最优值
+- 策略配置为$<\eta^*, Q^*, G^*>$，策略实施步骤如下
+  - 第一步：模型拥有者首先确定全局最优奖励$\eta^*$
+  - 第二步：数据拥有者们之间进行Nash均衡博弈，决定提供的数据质量和数据量，也就是每个数据拥有者对于全局模型的贡献$q^*_n$
+  - 第三步：每个算力中心根据最优承担的数据量$d^*_m$，选择一个特定的数据拥有者，并建立最优匹配关系$G_m^*$
+- 我们将资源解耦型的联邦学习定义为三方Stackelberg模型，其中：
+  - 模型拥有者作为领导者
+  - 数据拥有者作为次级领导者
+  - 计算中心作为跟随者
+
+**定义 1：Tripartite Stackelberg Model**
+
+$$
+\begin{cases}
+\textit{Leader } S:\quad \eta^* = \arg\max_{\eta} U_s, \\\\[8pt]
+\textit{Sub-Leaders } D_n:\quad q_n^* = \arg\max_{q_n} U_n, \quad n = 1, \dots, N, \\\\[8pt]
+\textit{Followers } C_m:\quad G_m^* = \arg\max_{G_m} U_m, \quad m = 1, \dots, M.
+\end{cases}
+$$
+
+**定义 2：Stackelberg-Nash Equilibrium 的条件表达式**
+
+$$
+\begin{cases}
+U_s(\eta^*, Q^*, G^*) \geq U_s(\eta, Q^*, G^*), \\\\
+U_n(\eta^*, q_n^*, q_{-n}^*, G^*) \geq U_n(\eta^*, q_n, q_{-n}^*, G^*), \quad n = 1, \dots, N, \\\\
+U_m(\eta^*, Q^*, G_m^*) \geq U_m(\eta^*, Q^*, G_m), \quad m = 1, \dots, M.
+\end{cases}
+$$
+
+- 上式说明了，三方博弈模型中任意一方不能通过自己的策略来获得更好的收益
+
 ## 附 (知识点)
 
 ### Stackelberg 博弈模型
