@@ -154,6 +154,25 @@ $$
 
 - 上式说明了，三方博弈模型中任意一方不能通过自己的策略来获得更好的收益
 
+### 三方层级博弈模型解析 (Analysis of Tripartite Stackelberg Model)
+
+- 根据逆向归纳法，我们首先
+
+$$
+\frac{\partial U_n(d_m)}{\partial d_m}
+= \frac{\sum_{i \neq m} d_i}{\left(d_m + \sum_{i \neq m} d_i \right)^2}
+\cdot \lambda \sum_{n=1}^{N} \rho x_n - \varepsilon \sigma_m \tag{7}
+$$
+
+$$
+\frac{\partial^2 U_n(d_m)}{\partial d_m^2}
+= \frac{-2 \sum_{i \neq m} d_i}{\left(d_m + \sum_{i \neq m} d_i \right)^3}
+\cdot \lambda \sum_{n=1}^{N} \rho x_n < 0 \tag{8}
+$$
+
+- 公式8说明效用对于$d_m$的二阶导是小于0的
+- 那么效用函数就是一个凹函数，存在极大值点
+
 ## 附 (知识点)
 
 ### Stackelberg 博弈模型
