@@ -156,7 +156,15 @@ $$
 
 ### 三方层级博弈模型解析 (Analysis of Tripartite Stackelberg Model)
 
-- 根据逆向归纳法，我们首先
+- 根据逆向归纳法，我们：
+  - 首先，求解出每个计算中心的最优$d_m^*$
+  - 然后，计算出每个数据拥有者的最优$q_n^*$
+  - 最后，是模型拥有者的最优$\eta^*$
+
+**引理1：对于每一个计算中心，给定从数据拥有者获得的数据量，都有一个特定的最优$d_m^*$使得计算中心的效用能够最大**
+
+- 对于计算中心来说，决策空间就是每个计算中心所能选择的数据量
+- 数据量的范围是一个有界的，连续的，封闭的
 
 $$
 \frac{\partial U_n(d_m)}{\partial d_m}
@@ -170,8 +178,43 @@ $$
 \cdot \lambda \sum_{n=1}^{N} \rho x_n < 0 \tag{8}
 $$
 
+- 公式7、8是效用函数对数据量$d_m$的一阶导数和二阶导数
 - 公式8说明效用对于$d_m$的二阶导是小于0的
 - 那么效用函数就是一个凹函数，存在极大值点
+
+**引理2：对于一个数据拥有者$q_n$，给定$\eta$和$q_{-n}$，存在一个最优策略$q_n^*$来最大化数据拥有者的$U_n$**
+
+- 对于每个数据拥有者的决策空间，是一个连续的，封闭的，有界的区间$[0, |X_n|]$
+
+$$
+\frac{\partial U_n(q_n, q_{-n})}{\partial q_n} =
+\frac{\sum_{i \neq n} q_i}{\left( q_n + \sum_{i \neq n} q_i \right)^2} \cdot \eta
+-\frac{\lambda \rho}{f_n} \tag{10}
+$$
+
+$$
+\frac{\partial^2 U_n(q_n, q_{-n})}{\partial q_n^2} =
+\frac{-2 \sum_{i \neq n} q_i}{\left( q_n + \sum_{i \neq n} q_i \right)^3} \cdot \eta < 0 \tag{11}
+$$
+
+- 通过求解可以得到
+
+$$
+q_n^* = \frac{(N - 1) \eta}{\lambda \rho \sum_{i=1}^N \frac{1}{f_i}}
+\left( 1 - \frac{N - 1}{f_n \sum_{i=1}^N \frac{1}{f_i}} \right) \tag{12}
+$$
+
+**引理3：对于模型拥有者**
+
+$$
+\frac{\partial U_s(\eta)}{\partial \eta}
+= \alpha g'\left( \sum_{n=1}^N q_n \right) \sum_{i=1}^N T_n - 1 \tag{13}
+$$
+
+$$
+\frac{\partial^2 U_s(\eta)}{\partial \eta^2}
+= \alpha g''\left( \sum_{n=1}^N q_n \right) \left( \sum_{i=1}^N T_n \right)^2 < 0 \tag{14}
+$$
 
 ## 附 (知识点)
 
