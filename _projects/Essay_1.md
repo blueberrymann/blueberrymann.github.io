@@ -204,7 +204,10 @@ q_n^* = \frac{(N - 1) \eta}{\lambda \rho \sum_{i=1}^N \frac{1}{f_i}}
 \left( 1 - \frac{N - 1}{f_n \sum_{i=1}^N \frac{1}{f_i}} \right) \tag{12}
 $$
 
-**引理3：对于模型拥有者**
+**引理3：对于模型拥有者，给定参数$\alpha$和客观的有数据拥有者$f_n$提供的数据质量，存在一个最优的$\eta^*$使得模型拥有者的效用$U_s$最优**
+
+- $\eta$的范围是$[0, +\infty]$，但是由于边际递减效应和从实际角度来讲模型拥有者并不会给出无限多的报酬，所以$\eta$的范围也应该是有界的，封闭的和连续的
+- 公式13和14分别为模型拥有者的效用函数对于$\eta$的一阶导和二阶导
 
 $$
 \frac{\partial U_s(\eta)}{\partial \eta}
@@ -215,6 +218,16 @@ $$
 \frac{\partial^2 U_s(\eta)}{\partial \eta^2}
 = \alpha g''\left( \sum_{n=1}^N q_n \right) \left( \sum_{i=1}^N T_n \right)^2 < 0 \tag{14}
 $$
+
+- 最后，解得$\eta^*$如公式15所示：
+
+$$
+\eta^* = \alpha - \frac{1}{\sum_{i=1}^N T_n} \tag{15}
+$$
+
+### QD-RDFL
+
+- 在本节中，我们设计了QD-RDFL算法来识别最优strategy profile，其中设计了一种动态优化机制，通过评估数据所有者的模型贡献来提高最优策略。
 
 ## 附 (知识点)
 
