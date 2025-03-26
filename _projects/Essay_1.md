@@ -6,7 +6,7 @@ img: assets/img/projects/Data_Assetization主图.png
 importance: 1
 category: 学术
 giscus_comments: false
-mermaid: true
+pseudocode: true
 ---
 
 <div class="row">
@@ -228,6 +228,70 @@ $$
 ### QD-RDFL
 
 - 在本节中，我们设计了QD-RDFL算法来识别最优strategy profile，其中设计了一种动态优化机制，通过评估数据所有者的模型贡献来提高最优策略。
+- 为了检验数据的实际贡献，最精确的方法是使用本地模型在验证集上测试精确度，但是这种方法会带来更大的成本
+- 所以我们选择使用训练损失来作为评估$f_n$的指标
+
+$$
+f = loss(t_s) -loss(t_e) \tag{16}
+$$
+
+- QD-RDFL算法总共有5步：
+  1. 初始化：模型拥有者S分发任务，初始化$S,\ D_n,\ C_m$
+  2. 初始化最优策略：$S,\ D,\ C$首先计算出一个初始策略
+  3. 使用Gale-Shapley算法匹配数据和算力资源：数据和算力中心根据初始化的最优策略进行匹配
+  4. 联邦学习和数据质量评估：模型拥有者和计算中心进行传统联邦学习
+  5. 动态调整最优策略：$S,\ D,\ C$根据实际的训练结果调整最优策略
+
+```pseudocode
+\begin{algorithm}
+\caption{QD-RDFL: Quality-aware Dynamic Resources-Decoupled Federated Learning}
+\begin{algorithmic}[1]
+\REQUIRE Data owners $D_n\ (n = 1, \dots, N)$, computing centers $C_m\ (m = 1, \dots, M)$, parameters $\rho, \varepsilon, \alpha, \lambda$, adjustment round $L$
+\ENSURE Optimal strategy profile $\langle \eta^*, Q^*, G^* \rangle$
+
+\STATE Initialize $S, D, C$, and let each data owner report initial $f_n$
+\STATE Compute $\eta^*$ according to Equation (15)
+\STATE Compute $x_n^*$ for each $D_n$ according to Equation (12)
+\STATE Compute $d_m^*$ for each $C_m$ according to Equation (9)
+\STATE Compute $G^* = \textsc{Gale-Shapley}(D_n, C_m)$
+\FOR{each data owner $D_n,\ n \in [1, N]$}
+    \STATE Randomly pick $x_n^*$ and transfer data based on $G^*$
+\ENDFOR
+\FOR{each round $t = 1, 2, \dots, T$}
+    \FOR{each computing center $C_m,\ m \in [1, M]$}
+        \STATE $(w_m^{t+1}, f_m^{t+1}) \leftarrow \textsc{ClientUpdate}(C_m, w^t)$
+    \ENDFOR
+    \IF{$t = L$}
+        \STATE Normalize each $f_n$, recalculate $\eta^*$ and $x_n^*$
+        \IF{$x_t^* > x_t$}
+            \STATE Pay additional training fees
+        \ENDIF
+    \ENDIF
+    \STATE $w^{t+1} \leftarrow \frac{1}{M} \sum_{m=1}^{M} w_m^{t+1}$ \COMMENT{Global model aggregation}
+\ENDFOR
+
+\end{algorithmic}
+\end{algorithm}
+```
+
+```pseudocode
+\begin{algorithm}
+\caption{ClientUpdate}
+\begin{algorithmic}[1]
+\REQUIRE Computing center $C_m$, global model parameter $w$, start time $t_s$, end time $t_e$
+\ENSURE Updated local model $w_m$, data quality contribution $f_m$
+
+\STATE $w_m \leftarrow w$
+\FOR{each local epoch $i$ from $1$ to $E$}
+    \STATE $w_m \leftarrow w_m - \beta \nabla \mathcal{L}(w_m)$
+    \STATE Record $loss(t_s)$ and $loss(t_e)$
+\ENDFOR
+\STATE $f_m \leftarrow loss(t_s) - loss(t_e)$
+\RETURN $w_m$, $f_m$
+
+\end{algorithmic}
+\end{algorithm}
+```
 
 ## 附 (知识点)
 
