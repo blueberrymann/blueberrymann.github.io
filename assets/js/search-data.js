@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-模拟",
+            },{id: "post-基础知识",
+      
+        title: "基础知识",
+      
+      description: "学习基础知识思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/acwing-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/";
+        
+      },
+    },{id: "post-模拟",
       
         title: "模拟",
       
