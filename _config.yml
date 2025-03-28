@@ -87,9 +87,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: 积跬步，行千里 # blog_name will be displayed in your blog page
-blog_description: |
-  Welcome! 
-  Here I will display experience, errors, and reflects during my learning.
+blog_description: Step by step, a thousand miles ahead.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
