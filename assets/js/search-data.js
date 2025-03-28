@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-搜索与图论",
+            },{id: "post-模拟",
+      
+        title: "模拟",
+      
+      description: "模拟题太难了，希望越来越厉害~",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/cpp-%E6%A8%A1%E6%8B%9F/";
+        
+      },
+    },{id: "post-搜索与图论",
       
         title: "搜索与图论",
       
