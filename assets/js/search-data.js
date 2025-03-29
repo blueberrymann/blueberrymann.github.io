@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-基础知识",
+            },{id: "post-acwing算法提高课搜索基础知识",
+      
+        title: "AcWing算法提高课搜索基础知识",
+      
+      description: "算法提高课——学习基础知识思想和板子",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/acwing-%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E8%AF%BE-%E6%90%9C%E7%B4%A2/";
+        
+      },
+    },{id: "post-基础知识",
       
         title: "基础知识",
       
