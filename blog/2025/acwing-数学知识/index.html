@@ -282,7 +282,34 @@
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div> <h1 id="求组合数">求组合数</h1> <h2 id="求组合数-i">求组合数 I</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-480.webp 480w,/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-800.webp 800w,/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="求组合数 I" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h3 id="知识点-6">知识点</h3> <ul> <li>$\mathrm{C}<em>{a}^{b} = \mathrm{C}</em>{a-1}^{b}+\mathrm{C}_{a-1}^{b-1}$</li> </ul> <h3 id="解题思路-6">解题思路</h3> <h3 id="实现代码-7">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</code></pre></div></div> <h1 id="欧拉函数">欧拉函数</h1> <h2 id="欧拉函数-1">欧拉函数</h2> <h3 id="知识点-6">知识点</h3> <ul> <li>$\phi(n)$表示1~n中互质的数有多少个</li> <li>$\phi(6)=2$</li> </ul> <h3 id="解题思路-6">解题思路</h3> <ul> <li>从1~N中去掉$p_1, p_2, \dots,p_k$的所有倍数</li> <li>加上所有$p_i \times p_j$的倍数</li> </ul> <h3 id="实现代码-7">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">--</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">/</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">while</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">a</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">/</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="求组合数">求组合数</h1> <h2 id="求组合数-i">求组合数 I</h2> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-480.webp 480w,/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-800.webp 800w,/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/screenshot/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="求组合数 I" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h3 id="知识点-7">知识点</h3> <ul> <li>$\mathrm{C}<em>{a}^{b} = \mathrm{C}</em>{a-1}^{b}+\mathrm{C}_{a-1}^{b-1}$</li> </ul> <h3 id="解题思路-7">解题思路</h3> <h3 id="实现代码-8">实现代码</h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">,</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
