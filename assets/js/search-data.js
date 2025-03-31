@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-acwing算法提高课搜索基础知识",
+            },{id: "post-算法竞赛总结",
+      
+        title: "算法竞赛总结",
+      
+      description: "对于参加过的竞赛的一些反思与总结",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%80%BB%E7%BB%93/";
+        
+      },
+    },{id: "post-acwing算法提高课搜索基础知识",
       
         title: "AcWing算法提高课搜索基础知识",
       
