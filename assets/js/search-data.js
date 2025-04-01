@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-acwing算法提高课-动态规划",
+            },{id: "post-生态经济与复垦汇报",
+      
+        title: "生态经济与复垦汇报",
+      
+      description: "生态经济与复垦相关知识的汇报内容",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E7%94%9F%E6%80%81%E7%BB%8F%E6%B5%8E%E4%B8%8E%E5%A4%8D%E5%9E%A6%E6%B1%87%E6%8A%A5/";
+        
+      },
+    },{id: "post-acwing算法提高课-动态规划",
       
         title: "AcWing算法提高课——动态规划",
       
