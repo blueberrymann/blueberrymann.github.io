@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-生态经济与复垦汇报",
+            },{id: "post-蓝桥杯每日一题-第三周",
+      
+        title: "蓝桥杯每日一题——第三周",
+      
+      description: "记录蓝桥杯每日一题的解题思路的求解代码",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%AC%AC%E4%B8%89%E5%91%A8/";
+        
+      },
+    },{id: "post-生态经济与复垦汇报",
       
         title: "生态经济与复垦汇报",
       
@@ -166,17 +177,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
-        
-      },
-    },{id: "post-20250227力扣每日一题",
-      
-        title: "20250227力扣每日一题",
-      
-      description: "记录每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/0227-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
     },{id: "post-20250225力扣每日一题",
