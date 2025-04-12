@@ -58,7 +58,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-生态经济与复垦讲稿",
+            },{id: "post-自然语言处理笔记",
+      
+        title: "自然语言处理笔记",
+      
+      description: "回顾自然语言处理所学，学习新的NLP内容",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0/";
+        
+      },
+    },{id: "post-电子数据采集与分析通识方法笔记",
+      
+        title: "电子数据采集与分析通识方法笔记",
+      
+      description: "记录电子数据采集与分析通识方法课上所学",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E7%94%B5%E5%AD%90%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E7%AC%94%E8%AE%B0/";
+        
+      },
+    },{id: "post-生态经济与复垦讲稿",
       
         title: "生态经济与复垦讲稿",
       
