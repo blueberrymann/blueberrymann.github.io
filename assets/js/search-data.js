@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-自然语言处理笔记",
+            },{id: "post-学习pytorch",
+      
+        title: "学习Pytorch",
+      
+      description: "在Youtube上发现一门学习Pytorch的课程，记录一下学习的心得",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%AD%A6%E4%B9%A0Pytorch/";
+        
+      },
+    },{id: "post-自然语言处理笔记",
       
         title: "自然语言处理笔记",
       
