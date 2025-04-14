@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-学习pytorch",
+            },{id: "post-力扣hot100二番ak",
+      
+        title: "力扣hot100二番ak",
+      
+      description: "蓝桥杯告一段落，现在终于有时间把hot100重新刷一遍了，第一遍的时候只做了50多题，这遍争取都做一遍",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8A%9B%E6%89%A3-hot100/";
+        
+      },
+    },{id: "post-学习pytorch",
       
         title: "学习Pytorch",
       
