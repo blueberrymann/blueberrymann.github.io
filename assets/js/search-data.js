@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-力扣hot100二番ak",
+            },{id: "post-区块链应用导论讲稿",
+      
+        title: "区块链应用导论讲稿",
+      
+      description: "区块链应用导论的汇报内容",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BA%94%E7%94%A8%E5%AF%BC%E8%AE%BA%E8%AE%B2%E7%A8%BF/";
+        
+      },
+    },{id: "post-力扣hot100二番ak",
       
         title: "力扣hot100二番ak",
       
