@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-区块链应用导论讲稿",
+            },{id: "post-工程伦理学讲稿",
+      
+        title: "工程伦理学讲稿",
+      
+      description: "区块链应用导论的汇报内容",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%B7%A5%E7%A8%8B%E4%BC%A6%E7%90%86%E5%AD%A6%E6%B1%87%E6%8A%A5%E8%AE%B2%E7%A8%BF/";
+        
+      },
+    },{id: "post-区块链应用导论讲稿",
       
         title: "区块链应用导论讲稿",
       
