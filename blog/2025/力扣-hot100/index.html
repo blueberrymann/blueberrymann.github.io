@@ -230,6 +230,36 @@
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></div></div> <h2 id="链表">链表</h2> <h3 id="两两交换链表中的节点"><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">两两交换链表中的节点</a></h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">swapPairs</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 利用递归的思想</span>
+        <span class="c1">// 初始化一个newHead节点，作为新链表的头结点</span>
+        <span class="c1">// 每次递归的操作为：</span>
+        <span class="c1">// 将head节点放在链表的第二个节点</span>
+        <span class="c1">// 将第二个结点作为newHead节点</span>
+        <span class="c1">// 当链表中没有节点，或者还有一个节点时停止递归</span>
+        <span class="c1">// 返回newHead节点</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">||</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">newHead</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">swapPairs</span><span class="p">(</span><span class="n">newHead</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+        <span class="n">newHead</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">newHead</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div></div> <h2 id="图论">图论</h2> <h3 id="岛屿数量"><a href="https://leetcode.cn/problems/number-of-islands/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">岛屿数量</a></h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
 

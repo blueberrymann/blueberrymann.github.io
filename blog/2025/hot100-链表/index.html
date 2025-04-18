@@ -146,7 +146,7 @@
 
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div> <h1 id="删除链表的倒数第n个节点">删除链表的倒数第N个节点</h1> <p><img src="/assets/img/screenshot/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9.png" alt=""></p> <h2 id="知识点-4">知识点</h2> <ul> <li>哑结点：</li> </ul> <h2 id="解题思路-4">解题思路</h2> <h2 id="实现代码-4">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+</code></pre></div></div> <h1 id="删除链表的倒数第n个节点">删除链表的倒数第N个节点</h1> <p><img src="/assets/img/screenshot/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9.png" alt=""></p> <h2 id="知识点-4">知识点</h2> <ul> <li>哑结点：在链表操作中，为了避免处理头节点的特殊情况，通常会创建一个哑结点（dummy node）作为链表的新头部。哑结点的值通常不重要，它的next指针指向原链表的头节点。这样在删除或插入操作时，可以统一处理所有节点，包括原始的头节点，简化代码逻辑。</li> <li>双指针技巧：可以使用快慢指针找到倒数第N个节点。让快指针先走N步，然后快慢指针一起走，当快指针到达链表末尾时，慢指针正好指向倒数第N个节点的前一个节点。</li> <li>链表长度计算：通过遍历链表可以获取链表的总长度，然后可以计算出倒数第N个节点是正数第(length-N+1)个节点。</li> </ul> <h2 id="解题思路-4">解题思路</h2> <h2 id="实现代码-4">实现代码</h2> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
