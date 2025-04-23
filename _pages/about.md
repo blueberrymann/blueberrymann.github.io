@@ -6,7 +6,7 @@ subtitle: 个人网站、博客、记录
 
 profile:
   align: right
-  image: BearAndRabbit.png
+  image: MeAndGrace_Ghibli.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Northeastern University</p>
