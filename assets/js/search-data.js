@@ -58,26 +58,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-工程伦理学讲稿",
+            },{id: "post-面试总结",
       
-        title: "工程伦理学讲稿",
+        title: "面试总结",
       
-      description: "区块链应用导论的汇报内容",
+      description: "总结保研路上面试的不足，持续进步",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/%E5%B7%A5%E7%A8%8B%E4%BC%A6%E7%90%86%E5%AD%A6%E6%B1%87%E6%8A%A5%E8%AE%B2%E7%A8%BF/";
-        
-      },
-    },{id: "post-区块链应用导论讲稿",
-      
-        title: "区块链应用导论讲稿",
-      
-      description: "区块链应用导论的汇报内容",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BA%94%E7%94%A8%E5%AF%BC%E8%AE%BA%E8%AE%B2%E7%A8%BF/";
+          window.location.href = "/blog/2025/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/";
         
       },
     },{id: "post-力扣hot100二番ak",
@@ -111,50 +100,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0/";
-        
-      },
-    },{id: "post-电子数据采集与分析通识方法笔记",
-      
-        title: "电子数据采集与分析通识方法笔记",
-      
-      description: "记录电子数据采集与分析通识方法课上所学",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E7%94%B5%E5%AD%90%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E7%AC%94%E8%AE%B0/";
-        
-      },
-    },{id: "post-生态经济与复垦讲稿",
-      
-        title: "生态经济与复垦讲稿",
-      
-      description: "生态经济与复垦相关知识的汇报内容",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E7%94%9F%E6%80%81%E7%BB%8F%E6%B5%8E%E4%B8%8E%E5%A4%8D%E5%9E%A6%E8%AE%B2%E7%A8%BF/";
-        
-      },
-    },{id: "post-蓝桥杯每日一题-第三周",
-      
-        title: "蓝桥杯每日一题——第三周",
-      
-      description: "记录蓝桥杯每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%AC%AC%E4%B8%89%E5%91%A8/";
-        
-      },
-    },{id: "post-生态经济与复垦汇报",
-      
-        title: "生态经济与复垦汇报",
-      
-      description: "生态经济与复垦相关知识的汇报内容",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E7%94%9F%E6%80%81%E7%BB%8F%E6%B5%8E%E4%B8%8E%E5%A4%8D%E5%9E%A6%E6%B1%87%E6%8A%A5/";
         
       },
     },{id: "post-acwing算法提高课-动态规划",
@@ -256,17 +201,6 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/";
         
       },
-    },{id: "post-20250225力扣每日一题",
-      
-        title: "20250225力扣每日一题",
-      
-      description: "记录每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/0225-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
     },{id: "post-2025第一周蓝桥杯每日一题",
       
         title: "2025第一周蓝桥杯每日一题",
@@ -276,39 +210,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/0223-0227-%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-20250224力扣每日一题",
-      
-        title: "20250224力扣每日一题",
-      
-      description: "记录每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/0224-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-20250223力扣每日一题",
-      
-        title: "20250223力扣每日一题",
-      
-      description: "记录每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/0223-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
-        
-      },
-    },{id: "post-20250222力扣每日一题",
-      
-        title: "20250222力扣每日一题",
-      
-      description: "记录每日一题的解题思路的求解代码",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/0222-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/";
         
       },
     },{id: "post-20250221力扣每日一题",
