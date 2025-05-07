@@ -29,32 +29,95 @@ pagination:
   </div>
   {% endif %}
 
-<!-- {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
-
+<div class="tag-category-container">
   <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
+    <ul class="p-0 m-0" id="tagsList">
+      {% assign all_posts = site.posts | sort: 'date' | reverse %}
+      {% assign tag_list = '' | split: '' %}
+      {% for post in all_posts %}
+        {% for tag in post.tags %}
+          {% unless tag_list contains tag %}
+            {% assign tag_list = tag_list | push: tag %}
+          {% endunless %}
+        {% endfor %}
       {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
-      {% endif %}
-      {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
+      {% for tag in tag_list limit:10 %}
+        <li class="tag-item">
+          <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}" class="tag-link">
+            <i class="fa-solid fa-hashtag fa-sm"></i> <span>{{ tag }}</span>
+          </a>
         </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
       {% endfor %}
     </ul>
   </div>
-  {% endif %} -->
+</div>
+
+<style>
+  .tag-category-container {
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tag-category-list {
+    padding: 2px;
+    margin: 0;
+  }
+  .tag-category-list ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .tag-item {
+    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    margin: 0;
+    padding: 0;
+  }
+  .tag-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px 5px;
+    background-color: #e9ecef;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #495057;
+    transition: background-color 0.2s;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .tag-link:hover {
+    background-color: #dee2e6;
+    color: #212529;
+    text-decoration: none;
+  }
+  .tag-item:hover {
+    transform: translateY(-2px);
+  }
+  @media (max-width: 768px) {
+    .tag-category-list ul {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+  @media (max-width: 480px) {
+    .tag-category-list ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .tag-link {
+      padding: 8px 4px;
+      font-size: 1rem;
+    }
+  }
+</style>
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
