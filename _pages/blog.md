@@ -60,6 +60,9 @@ pagination:
     border-radius: 8px;
     overflow: hidden;
   }
+  [data-theme='dark'] .tag-category-container {
+    background-color: #2d333b;
+  }
   .tag-category-list {
     padding: 2px;
     margin: 0;
@@ -90,17 +93,31 @@ pagination:
     border-radius: 3px;
     text-decoration: none;
     color: #495057;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
     font-size: 1.05rem;
     font-weight: 500;
+  }
+  [data-theme='dark'] .tag-link {
+    background-color: #373e47;
+    color: #adbac7;
   }
   .tag-link:hover {
     background-color: #dee2e6;
     color: #212529;
     text-decoration: none;
   }
+  [data-theme='dark'] .tag-link:hover {
+    background-color: #444c56;
+    color: #cdd9e5;
+  }
   .tag-item:hover {
     transform: translateY(-2px);
+  }
+  [data-theme='dark'] .tag-link i {
+    color: #768390;
+  }
+  [data-theme='dark'] .tag-link:hover i {
+    color: #adbac7;
   }
   @media (max-width: 768px) {
     .tag-category-list ul {
