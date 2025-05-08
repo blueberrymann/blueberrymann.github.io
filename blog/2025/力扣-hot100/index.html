@@ -230,6 +230,41 @@
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></div></div> <h2 id="二叉树">二叉树</h2> <h3 id="二叉搜索树中第-k-小的元素"><a href="https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">二叉搜索树中第 K 小的元素</a></h3> <ul> <li>二叉树的题可以考虑用vector来存遍历到的各个节点</li> <li>若有明确要访问哪些节点，可以直接在vector中找</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">helper</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">;</span>
+        <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">kthSmallest</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h3 id="-二叉树展开为链表"><a href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank"> 二叉树展开为链表</a></h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">helper</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="o">&amp;</span><span class="n">nums</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">nums</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+            <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">nums</span><span class="p">);</span>
+            <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">nums</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">nums</span><span class="p">;</span>
+        <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">nums</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">TreeNode</span> <span class="o">*</span><span class="n">prev</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="o">*</span><span class="n">curr</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">prev</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+            <span class="n">prev</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div></div> <h2 id="链表">链表</h2> <h3 id="反转链表"><a href="https://leetcode.cn/problems/reverse-linked-list/description/" rel="external nofollow noopener" target="_blank">反转链表</a></h3> <ul> <li>反转链表的本质就是讲当前节点指向上一个节点</li> <li>所以我们需要两个节点，一个节点<code class="language-plaintext highlighter-rouge">curr</code>用来指向当前节点，一个节点<code class="language-plaintext highlighter-rouge">prev</code>用来指向上一个节点</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -284,7 +319,7 @@
         <span class="k">return</span> <span class="n">newHead</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div> <h2 id="k-个一组翻转链表"><a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">K 个一组翻转链表</a></h2> <ul> <li>又新添加了一个新的疑问</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</code></pre></div></div> <h3 id="k-个一组翻转链表"><a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">K 个一组翻转链表</a></h3> <ul> <li>又新添加了一个新的疑问</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="c1">// 模拟</span>
     <span class="c1">// prev = tail-&gt;next</span>
@@ -492,6 +527,23 @@
         <span class="c1">// 如果未腐烂的橘子还有剩余，则返回-1</span>
         <span class="c1">// 没有剩余，则返回ans</span>
         <span class="k">return</span> <span class="n">cnt</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h2 id="回溯">回溯</h2> <h3 id="子集"><a href="https://leetcode.cn/problems/subsets/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">子集</a></h3> <ul> <li>状态表示</li> <li>利用二进制数表示状态 <ul> <li>数位上为1，表示取数组中的数</li> <li>数位上为0，表示不取数组中的数</li> </ul> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">subsets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">);</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="n">t</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">))</span>
+                    <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+            <span class="p">}</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div> <h2 id="动态规划">动态规划</h2> <h3 id="乘积最大子数组"><a href="https://leetcode.cn/problems/maximum-product-subarray/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">乘积最大子数组</a></h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
