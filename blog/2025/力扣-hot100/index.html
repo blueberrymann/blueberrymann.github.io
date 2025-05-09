@@ -726,6 +726,51 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></div></div> <h3 id="组合总和"><a href="https://leetcode.cn/problems/combination-sum/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">组合总和</a></h3> <ul> <li>回溯中使用dfs的要诀 <ul> <li>如果返回的是多个答案的二维vector</li> <li>那么在求取每个答案的时候，可以用用stl维护答案</li> <li>例如vector，string</li> <li>这样在dfs时就可以使用push_back()和pop_back操作修改和还原答案，这样的操作也符合y总的思想</li> <li>注意在回溯中，因为这道题不限制选择数字的个数</li> <li>所以当选择数字的情况时，继续调用函数时，index不用变化</li> </ul> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+
+    <span class="kt">void</span> <span class="n">backtrack</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">ans</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">combine</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">candidates</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">candidates</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">return</span> <span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">combine</span><span class="p">);</span>
+            <span class="k">return</span> <span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 不选择当前数字</span>
+        <span class="n">backtrack</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">combine</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="p">);</span>
+        <span class="c1">// 选择当前数字</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">combine</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+            <span class="n">backtrack</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">combine</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+            <span class="n">combine</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">combinationSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">candidates</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">combine</span><span class="p">;</span>
+        <span class="n">backtrack</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">combine</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <ul> <li>这道题还有一种方法是使用完全背包 <ul> <li>使用了三维数组</li> <li>最外层表示和为<code class="language-plaintext highlighter-rouge">k</code>时，有多少数字组合，答案即为<code class="language-plaintext highlighter-rouge">dp[target]</code> </li> <li>依次枚举数组中的每一个数字<code class="language-plaintext highlighter-rouge">candidates[i]</code> </li> <li>然后枚举这个数和target之间的每一个数<code class="language-plaintext highlighter-rouge">j</code> </li> <li>取出所有和为<code class="language-plaintext highlighter-rouge">j - candidates[i]</code>的数组，并将<code class="language-plaintext highlighter-rouge">candidates[i]</code>push进去</li> <li>最后更新<code class="language-plaintext highlighter-rouge">dp[j]</code> </li> <li> <code class="language-plaintext highlighter-rouge">dp[target]</code>即为答案</li> </ul> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">combinationSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">candidates</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidates</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">target</span><span class="p">;</span> <span class="n">j</span> <span class="o">++</span><span class="p">)</span>
+                <span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">group</span><span class="o">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]]){</span>
+                    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">newGroup</span> <span class="o">=</span> <span class="n">group</span><span class="p">;</span>
+                    <span class="n">newGroup</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">newGroup</span><span class="p">);</span>
+                <span class="p">}</span>
+
+
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">target</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div></div> <h2 id="动态规划">动态规划</h2> <h3 id="乘积最大子数组"><a href="https://leetcode.cn/problems/maximum-product-subarray/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">乘积最大子数组</a></h3> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="c1">// 这道题不能按照像最大子序列和那样那么想，那道题的思路是:</span>
