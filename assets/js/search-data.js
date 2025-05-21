@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-面试总结",
+            },{id: "post-企业项目实训",
+      
+        title: "企业项目实训",
+      
+      description: "记录在阅读论文时遇到的生词和陌生概念",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E4%BC%81%E4%B8%9A%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD/";
+        
+      },
+    },{id: "post-面试总结",
       
         title: "面试总结",
       
