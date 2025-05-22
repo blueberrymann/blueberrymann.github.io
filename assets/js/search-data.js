@@ -62,7 +62,7 @@ ninja.data = [{
       
         title: "企业项目实训",
       
-      description: "记录在阅读论文时遇到的生词和陌生概念",
+      description: "记录在企业项目实训过程中遇到的bug和解决方案",
       section: "Posts",
       handler: () => {
         
