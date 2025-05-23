@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-企业项目实训",
+            },{id: "post-强化学习导论",
+      
+        title: "强化学习导论",
+      
+      description: "强化学习期末作业",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/";
+        
+      },
+    },{id: "post-企业项目实训",
       
         title: "企业项目实训",
       
