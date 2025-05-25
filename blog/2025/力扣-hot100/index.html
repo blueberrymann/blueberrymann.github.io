@@ -38,6 +38,87 @@
         <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></div></div> <h2 id="双指针">双指针</h2> <h3 id="移动零"><a href="https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">移动零</a></h3> <ul> <li>左指针指向当前遍历到的位置，右指针指向原数组（未插入<code class="language-plaintext highlighter-rouge">0</code>时中的元素，避免遍历到<code class="language-plaintext highlighter-rouge">0</code>）</li> <li>当左指针指向的元素为<code class="language-plaintext highlighter-rouge">0</code>时，数组<code class="language-plaintext highlighter-rouge">push_back(0)</code>，并<code class="language-plaintext highlighter-rouge">erase</code>当前左指针指向的元素。<code class="language-plaintext highlighter-rouge">right --</code> </li> <li>直至<code class="language-plaintext highlighter-rouge">left &gt;= right，遍历停止</code> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">moveZeroes</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">left</span> <span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span><span class="p">{</span>
+                <span class="n">nums</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">left</span><span class="p">);</span>
+                <span class="n">nums</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                <span class="n">right</span> <span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h3 id="盛最多水的容器"><a href="https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">盛最多水的容器</a></h3> <ul> <li>左指针和右指针分别指向左右边界，并向中间移动</li> <li>首先移动两个指针中高度较小的那个，这样才更有机会获得最大值</li> <li>直至两个指针相遇，遍历停止</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">maxArea</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 左右指针同时开始遍历</span>
+        <span class="c1">// 那个指针的高度低，哪个就移动，这样才更有机会获得最大值</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">height</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// int leftMax = left, rightMax = right;</span>
+        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">]);</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
+                <span class="n">left</span> <span class="o">++</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="n">right</span> <span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <h3 id="三数之和"><a href="https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">三数之和</a></h3> <ul> <li>自己写了一个超长代码</li> <li>时间复杂度是$O(n^2)$</li> <li>转化为两数之和问题</li> <li>利用双指针查找等于特定和的两个数</li> <li>为了避免同样的组合被反复查找，设立状态数组记录每个数是否被遍历过</li> <li>开始时左右指针分别指向左右边界（左边界：主循环遍历到的数<code class="language-plaintext highlighter-rouge">i</code>下一个数<code class="language-plaintext highlighter-rouge">i + 1</code>，右边界：<code class="language-plaintext highlighter-rouge">n - 1</code>）</li> <li>对于<code class="language-plaintext highlighter-rouge">0</code>的处理，如果最大元素和最小元素都是<code class="language-plaintext highlighter-rouge">0</code>，直接返回<code class="language-plaintext highlighter-rouge">0</code> </li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">threeSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">min_element</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">max_element</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+            <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">st</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">){</span>
+                    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                    <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="n">st</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">st</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]);</span>
+                    <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
+                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+                    <span class="n">t</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+                    <span class="n">t</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+                    <span class="n">l</span> <span class="o">++</span><span class="p">;</span>
+                    <span class="n">r</span> <span class="o">--</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">){</span>
+                    <span class="n">l</span> <span class="o">++</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                    <span class="n">r</span> <span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">// if(flag)</span>
+            <span class="c1">//     ans.push_back(t);</span>
+        <span class="p">}</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">ans</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">()),</span> <span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div></div> <h2 id="滑动窗口">滑动窗口</h2> <ul> <li>滑动窗口必备的三要素：<code class="language-plaintext highlighter-rouge">left</code>，<code class="language-plaintext highlighter-rouge">right</code>和<code class="language-plaintext highlighter-rouge">哈希表</code> </li> </ul> <h3 id="无重复字符的最长子串"><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/?envType=study-plan-v2&amp;envId=top-100-liked" rel="external nofollow noopener" target="_blank">无重复字符的最长子串</a></h3> <ul> <li>当我们每向后遍历一个字符时，我们发现寻找不重复子串的右指针都是向后或者不动的</li> <li>所以我们考虑到可以使用滑动窗口来寻找最长的不重复子串</li> <li>利用哈希集合来判断滑动窗口中是否有重复的字符</li> </ul> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="kt">int</span> <span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
