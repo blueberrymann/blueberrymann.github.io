@@ -132,6 +132,17 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
+          window.location.href = "/blog/2025/%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E8%AF%BE/";
+        
+      },
+    },{id: "post-acwing算法提高课-动态规划",
+      
+        title: "AcWing算法提高课——动态规划",
+      
+      description: "算法提高课——学习动态规划知识思想和板子",
+      section: "Posts",
+      handler: () => {
+        
           window.location.href = "/blog/2025/acwing-%E7%AE%97%E6%B3%95%E6%8F%90%E9%AB%98%E8%AF%BE-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/";
         
       },
