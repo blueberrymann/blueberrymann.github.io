@@ -124,9 +124,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%A4%8D%E4%B9%A0/";
         
       },
-    },{id: "post-acwing算法提高课-动态规划",
+    },{id: "post-acwing算法提高课",
       
-        title: "AcWing算法提高课——动态规划",
+        title: "AcWing算法提高课",
       
       description: "算法提高课——学习动态规划知识思想和板子",
       section: "Posts",
