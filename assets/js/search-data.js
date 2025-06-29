@@ -80,17 +80,6 @@ ninja.data = [{
           window.location.href = "/blog/2025/%E4%BC%81%E4%B8%9A%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD/";
         
       },
-    },{id: "post-面试总结",
-      
-        title: "面试总结",
-      
-      description: "总结保研路上面试的不足，持续进步",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/";
-        
-      },
     },{id: "post-力扣hot100二番ak",
       
         title: "力扣hot100二番ak",
