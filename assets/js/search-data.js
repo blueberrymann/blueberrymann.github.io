@@ -651,6 +651,11 @@ ninja.data = [{
           description: "五天的厦门之旅，被这座海滨城市的魅力深深吸引，不愧是中国最宜居的旅行目的地之一",
           section: "Travel",handler: () => {
               window.location.href = "/travel/1_project/";
+            },},{id: "travel-广东游记-穿梭于羊城与鮀城的美食之旅",
+          title: '广东游记 - 穿梭于羊城与鮀城的美食之旅',
+          description: "六天的广东之旅，从广州的早茶到顺德的生滚粥，再到汕头的牛肉火锅，一场舌尖上的极致体验",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/2_guangdong/";
             },},{
         id: 'social-email',
         title: 'email',
