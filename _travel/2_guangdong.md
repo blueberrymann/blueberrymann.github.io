@@ -2,12 +2,10 @@
 layout: page
 title: 广东游记 - 穿梭于羊城与鮀城的美食之旅
 description: 六天的广东之旅，从广州的早茶到顺德的生滚粥，再到汕头的牛肉火锅，一场舌尖上的极致体验
-img: # 留空，请在此处填写封面图片路径，例如 assets/img/Travel_to_Guangdong/cover.jpg
+img: assets/img/Travel_to_Guangdong/cute_panda.jpeg
 importance: 2
 category: 国内
 ---
-
-# 广东之旅：穿梭于羊城与鮀城的美食探索
 
 在这六天的旅程中，我们从繁华的广州出发，途经顺德，最终抵达汕头。这不仅是一场跨越城市的旅行，更是一次对广东美食文化的深度体验。从深夜食堂到睡到自然醒的早茶，从野生动物世界到地道牛肉火锅，每一站都充满了惊喜与满足。
 
@@ -17,21 +15,19 @@ category: 国内
 
 第一天的行程从下午的大兴机场开始（出发前还可以品尝美珍香），直到深夜抵达广州。
 
+安顿好住宿后，首顿夜宵直奔**楼上大排档**，感受广州独特的深夜食堂氛围。建议住宿选择在体育西路/珠江新城附近，例如全季酒店(广州珠江新城店)，价格实惠，就在广州塔旁边，出行极其便利。
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <!-- 【图片插入位置 1】：请将 path 的双引号内替换为您的大兴机场或到达广州的图片路径 -->
-        {% include figure.liquid loading="eager" path="" title="大兴机场出发/抵达广州" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Travel_to_Guangdong/oysters.jpg" title="楼上大排档生蚝" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <!-- 【图片插入位置 2】：请将 path 的双引号内替换为您入住的酒店图片路径 -->
-        {% include figure.liquid loading="eager" path="" title="全季酒店(广州珠江新城店)" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Travel_to_Guangdong/caramel-shrimp.jpg" title="楼上大排档焦糖虾" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    深夜抵达广州，入住体育西路/珠江新城附近的酒店，开启美食之旅的第一站
+    楼上大排档的夜宵：生蚝与焦糖虾
 </div>
-
-安顿好住宿后，首顿夜宵直奔**楼上大排档**，感受广州独特的深夜食堂氛围。建议住宿选择在体育西路/珠江新城附近，例如全季酒店(广州珠江新城店)，价格实惠，就在广州塔旁边，出行极其便利。
 
 ## 寻味顺德：睡到自然醒的美食治愈
 
@@ -40,6 +36,7 @@ category: 国内
 上午的主题是**睡到自然醒**！起床后悠闲地享用一顿广式早茶。推荐距离住处仅800米的**点都德**，甚至可以早起吃完再睡个回笼觉。
 
 下午避开午餐高峰，坐地铁或打车（约一小时，50-60元）前往顺德大良。
+
 1. **生滚粥**：第一顿直奔**粥球场生滚粥**（注意：下午两点就关门，务必早去）。
 2. **下午茶**：前往**金榜上街**或**华盖路**，品尝正宗的双皮奶、姜撞奶、炸牛奶。此时人相对少，体验更佳。
 3. **消食漫步**：去**清晖园**拍拍古风照片（17:00前入园），或在街巷里散步。
