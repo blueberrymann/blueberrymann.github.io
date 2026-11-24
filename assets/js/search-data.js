@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-强化学习导论",
+            },{id: "post-当智能体替你工作时-如何保持批判性思维",
+      
+        title: "当智能体替你工作时，如何保持批判性思维",
+      
+      description: "Critical thinking when agents do the work — Addy Osmani 关于智能体时代批判性思维的中英双语文章。",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/critical-thinking-when-agents-do-the-work/";
+        
+      },
+    },{id: "post-强化学习导论",
       
         title: "强化学习导论",
       
